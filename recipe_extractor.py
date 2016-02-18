@@ -1,9 +1,9 @@
 #Extracts recipes from text files of source:
 #    http://mc6help.tripod.com/RecipeLibrary/RecipeLibrary.htm
-import glob, re
+import glob, re, os
 
 #CHANGE TO YOUR RECIPE DIRECTORY
-recipes_dir = r"/media/HDD/resources/Recipes/"
+recipes_dir = os.getcwd()+"/"
 
 recipes_raw = []
 recipes = []            #list of all recipe objects
