@@ -56,7 +56,7 @@ for directory in file_list:
         
         #GET PREP TIME
         prep_time = r1[5]
-        time_pattern = re.compile("\d:\d\d\r")
+        time_pattern = re.compile("\d:\d\d")
         r1 = time_pattern.findall(prep_time)
         prep_time = r1[0].strip()   
         
