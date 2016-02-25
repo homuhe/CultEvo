@@ -50,54 +50,109 @@ def recipeDiff(r):
 
 #FOR EACH TEXT FILE:
 file_list = glob.glob(recipes_dir + "*.txt")
-for directory in file_list:
 
-    #GET CATEGORY
-    category = directory.split("/") #split up dir path /resources/Recipes/x.txt
-    category = category[-1]         #take last level in directory
-    category = category.strip(".txt").lower()
-    
-    #read file and slice up into recipes
-    raw_text = open(directory, mode="r"); 
-    all_recipes = raw_text.read()
-    raw_text.close()
+if os.name == "nt":
+#Windows OS    
+    for directory in file_list:
 
-    separator = "* Exported from MasterCook *"
-    recipes_raw = all_recipes.split(separator)
-    #OUTPUT: recipes_raw, list
-    
-    for r in recipes_raw[1:]:
+        #GET CATEGORY
+        category = directory.split("\\") #split up dir path /resources/Recipes/x.txt
+        category = category[-1]         #take last level in directory
+        category = category.strip(".txt").lower()
 
-        #GET TITLE
-        r1 = r.split("\n")
-        title = r1[:3][-1].strip()
+        #read file and slice up into recipes
+        raw_text = open(directory, mode="r");
+        all_recipes = raw_text.read()
+        raw_text.close()
+
+        separator = "* Exported from MasterCook *"
+        recipes_raw = all_recipes.split(separator)
+        #OUTPUT: recipes_raw, list
+
+        for r in recipes_raw[1:]:
+
+            #GET TITLE
+            r1 = r.split("\n")
+            title = r1[:3][-1].strip()
+
+            #GET PREP TIME
+            prep_time = r1[5]
+            #time_pattern = re.compile("\d:\d\d\r")
+            time_pattern = re.compile("\d:\d\d")
+            r1 = time_pattern.findall(prep_time)
+            prep_time = r1[0].strip()
+
+            if prep_time == "0:00":
+                pass
+            else:
+
+                separator2 = "\n--------  ------------  --------------------------------\n"
+                ingredients_list = r.split(separator2)
+
+                ingredients_list = ingredients_list[-1].split("\n\n")
+                ingredients_list = ingredients_list[0].split("\n")
+                ingredients_list = clean_ingredients(ingredients_list)
+
+                r = recipe(category, title, prep_time, ingredients_list)
+                recipeDiff(r)
+                recipes.append(r)
+
+                #ADDING INGREDIENTS TO GLOBAL LIST
+                for ingredient in ingredients_list:
+                    if ingredient not in all_ingredients:
+                        all_ingredients.append(ingredient)
+
+
+else:
+#Unix OS
+    for directory in file_list:
+
+        #GET CATEGORY
+        category = directory.split("/") #split up dir path /resources/Recipes/x.txt
+        category = category[-1]         #take last level in directory
+        category = category.strip(".txt").lower()
         
-        #GET PREP TIME
-        prep_time = r1[5]
-        #time_pattern = re.compile("\d:\d\d\r")
-        time_pattern = re.compile("\d:\d\d")
-        r1 = time_pattern.findall(prep_time)
-        prep_time = r1[0].strip()   
+        #read file and slice up into recipes
+        raw_text = open(directory, mode="r"); 
+        all_recipes = raw_text.read()
+        raw_text.close()
+
+        separator = "* Exported from MasterCook *"
+        recipes_raw = all_recipes.split(separator)
+        #OUTPUT: recipes_raw, list
         
-        if prep_time == "0:00":
-            pass
-        else:
+        for r in recipes_raw[1:]:
+
+            #GET TITLE
+            r1 = r.split("\n")
+            title = r1[:3][-1].strip()
             
-            separator2 = "\r\n--------  ------------  --------------------------------\r\n"
-            ingredients_list = r.split(separator2)
+            #GET PREP TIME
+            prep_time = r1[5]
+            #time_pattern = re.compile("\d:\d\d\r")
+            time_pattern = re.compile("\d:\d\d")
+            r1 = time_pattern.findall(prep_time)
+            prep_time = r1[0].strip()   
             
-            ingredients_list = ingredients_list[-1].split("\r\n\r\n")
-            ingredients_list = ingredients_list[0].split("\r\n")
-            ingredients_list = clean_ingredients(ingredients_list)
-            
-            r = recipe(category, title, prep_time, ingredients_list)
-            recipeDiff(r)
-            recipes.append(r)
-            
-            #ADDING INGREDIENTS TO GLOBAL LIST
-            for ingredient in ingredients_list:
-                if ingredient not in all_ingredients:
-                    all_ingredients.append(ingredient)
+            if prep_time == "0:00":
+                pass
+            else:
+                
+                separator2 = "\r\n--------  ------------  --------------------------------\r\n"
+                ingredients_list = r.split(separator2)
+                
+                ingredients_list = ingredients_list[-1].split("\r\n\r\n")
+                ingredients_list = ingredients_list[0].split("\r\n")
+                ingredients_list = clean_ingredients(ingredients_list)
+                
+                r = recipe(category, title, prep_time, ingredients_list)
+                recipeDiff(r)
+                recipes.append(r)
+                
+                #ADDING INGREDIENTS TO GLOBAL LIST
+                for ingredient in ingredients_list:
+                    if ingredient not in all_ingredients:
+                        all_ingredients.append(ingredient)
 
 
 def retAllIngreds():
