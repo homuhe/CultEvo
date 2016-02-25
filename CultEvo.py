@@ -1,4 +1,3 @@
-__author__ = 'AD'
 
 """
     Cultural Evolution Simulation
@@ -38,8 +37,9 @@ agentArray = agentGen.getAgentArr()
 
 # when one generation is done, increase generation counter
 
-for x in Generation.agentsOverAllDict[1]:
-    print x.retIDA()
+for x in Generation.agentsOverAllDict[0]:
+    print"IDA: {:3}  Name: {:>50}   Parents: {}".format(x.retIDA(),x.retRec().title,x.ancestors)
+
 
 
 #Test.RetRecipies(0,5)

@@ -71,13 +71,13 @@ class Agent(object):
         del self.recipies[:]
 
 
-        #if ( isinstance(parent,Agent)):
+        if ( isinstance(parent,Agent)):
             # Adding the parent element of each Agent of a Generation different than
             # the first Generation to this Agents ancestry
             # ReviseMe: actually using two agents as 'parents', right now we have a very modern single parent society
 
-           # self.parent = parent
-           # self.ancestors.append(self.parent.idA)
+            self.parent = parent
+            self.ancestors.append(self.parent.idA)
 
 
 

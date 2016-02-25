@@ -105,7 +105,6 @@ class Generation(object):
                 #  ToDo: higher Order Generations
                 # ================================
 
-                #for i in range(1,counterGen):
                 # <editor-fold desc="GenSetUp">
 
                 # assigning the arrays only for the first Generation
@@ -198,7 +197,7 @@ class Generation(object):
                     # AmDone: we need a way to adjust our upper bound for the random sampling
                     # so that we dont want to sample 10 items when our array only consists of
                     # ,e.g., 9 or less elements
-
+                    # <editor-fold desc="SocArrs">
                     if self.gen1.__len__() >= self.maxSocSize:
                         # <editor-fold desc="RandomSocArr">
                         try:
@@ -226,8 +225,9 @@ class Generation(object):
                             print ("Could not create social environment of large size!")
                             # </editor-fold>
 
+                    # only little amount of Agents left in the array
                     elif self.gen1.__len__() >= 2:
-                        # <editor-fold desc="SmallSocArrs">
+
                         try:
                             self.friendArr = random.sample(self.gen1, 2)
                             self.SGArrs.append(self.friendArr[:])
@@ -246,7 +246,7 @@ class Generation(object):
 
                         except ValueError:
                             print ("Could not create social environment of small size!")
-                        # </editor-fold>
+                    # </editor-fold>
 
                     else:  # again, dont judge your own again
 
