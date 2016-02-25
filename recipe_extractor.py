@@ -18,6 +18,9 @@ class recipe:
 
         if category == "beef" or category == "pork": 
             category = "meat"
+        elif category.startswith("veg"):
+            category = "veggi"
+            
         
         self.category = category            #string
         self.title = title                  #string
@@ -43,7 +46,7 @@ def recipeDiff(r):
         recipesMeat.append(r)
     elif r.category=="fish":
         recipesFish.append(r)
-    elif r.category.startswith("veg"):
+    elif r.category==("veggi"):
         recipesVeggi.append(r)
     else:
         sys.exit("Error in recipe_extractor.py, lines 35, wrong recipe type handed over from source txt file.")
