@@ -52,7 +52,6 @@ def recipeDiff(r):
 file_list = glob.glob(recipes_dir + "*.txt")
 for directory in file_list:
 
-    print(directory)
     #GET CATEGORY
     category = directory.split("/") #split up dir path /resources/Recipes/x.txt
     category = category[-1]         #take last level in directory
