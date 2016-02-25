@@ -87,8 +87,8 @@ for directory in file_list:
             separator2 = "\r\n--------  ------------  --------------------------------\r\n"
             ingredients_list = r.split(separator2)
             
-            ingredients_list = ingredients_list[-1].split("\n\n")
-            ingredients_list = ingredients_list[0].split("\n")
+            ingredients_list = ingredients_list[-1].split("\r\n\r\n")
+            ingredients_list = ingredients_list[0].split("\r\n")
             ingredients_list = clean_ingredients(ingredients_list)
             
             r = recipe(category, title, prep_time, ingredients_list)
