@@ -18,7 +18,7 @@ import sys
 import itertools    # for permutations on our agent array
 
 
-import recipe_extractor as REx
+import Recipe as REx
 
 
 random.seed()
