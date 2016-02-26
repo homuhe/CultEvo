@@ -3,7 +3,7 @@
 import glob, re, os, pprint, sys
 
 #CHANGE TO YOUR RECIPE DIRECTORY
-recipes_dir = r"/media/HDD/resources/Recipes/"
+recipes_dir = os.path.dirname(os.path.realpath(__file__)) + "/Recipes/"
 
 recipes_raw = []
 recipes = []            #list of all recipe objects
