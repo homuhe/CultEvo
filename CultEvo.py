@@ -26,7 +26,7 @@ import Presets as P
 
 
 # Variable determining how many generations we want to allow
-generations = 8
+generations = P.generations
 
 
 
@@ -36,9 +36,13 @@ agentArray = agentGen.getAgentArr()
 #Test.CntTest(agentArray)
 
 # when one generation is done, increase generation counter
-
-for x in Generation.agentsOverAllDict[0]:
-    print"IDA: {:3}  Name: {:>50}   Parents: {}".format(x.retIDA(),x.retRec().title,x.ancestors)
+#print Generation.agentsOverGenerations.__len__()
+#print Generation.agentsOverAllDict.__len__()
+#for agnLst in range(Generation.agentsOverAllDict.__len__()) :
+#    print ( " ---   ---   --- ")
+#    for x in Generation.agentsOverAllDict[agnLst]:
+#        print"IDA: {:3}  Name: {:>50}   Parents: {}".format(x.retIDA(),x.retRec().title,x.ancestors)
+#    print "Winning Recipe: {:35}".format(Generation.RecListOverGenerations[agnLst])
 
 
 
@@ -46,7 +50,11 @@ for x in Generation.agentsOverAllDict[0]:
 #Test.RetAllRec()
 #Test.RetGenRecArr(0)
 #Test.RetWinGenRecArr(0)
-#Test.RetSGArrs(0)
+
+#for gen in range(Generation.SocialGroups.__len__()):
+#    print "Generation: " + str(gen)
+print()
+Test.RetSGArrs(0)
 
 #print Generation.WinningArrsOverGenerations.__len__()
 #Test.RetWinGenRecArr(0)
