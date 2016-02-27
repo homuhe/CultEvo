@@ -16,7 +16,7 @@ __author__ = 'AD'
 import random
 import sys
 import itertools    # for permutations on our agent array
-
+import Generation
 
 import recipe_extractor as REx
 
@@ -35,7 +35,7 @@ class Agent(object):
 
     recipies = []
 
-    ancestors = []
+    #ancestors = []
 
     def setIDA(self):
         """
@@ -60,26 +60,38 @@ class Agent(object):
         :return: The Recipies that this agent uses
         '''
 
-        # ReviseMe : giving back only the 1st one at the moment
+        # ReviewMe : giving back only the 1st one at the moment
         return self.recipies[0]
 
 
 
     def __init__(self, pref,parent):
 
-        # start with empty list of recipies for each Agent
+        # each Agent will eventually be assigned to a social group, we may want to know
+        # to which one later on:
+        self.sgID = None
+
+        # start with empty list of recipies for each Agent, ReviewMe self.recipies = [] should be correct
         del self.recipies[:]
 
+        # List of IDs of ancestor agents, in order (oldest at [0] - direct parent at [__len__()-1]),
+        self.ancestors = []
 
+        # <editor-fold desc="Ancestor-SetUp">
         if ( isinstance(parent,Agent)):
             # Adding the parent element of each Agent of a Generation different than
             # the first Generation to this Agents ancestry
-            # ReviseMe: actually using two agents as 'parents', right now we have a very modern single parent society
+            # ReviewMe: actually using two agents as 'parents', right now we have a very modern single parent society
 
             self.parent = parent
-            self.ancestors.append(self.parent.idA)
 
+            if self.parent.ancestors.__len__() == 0 :
+                self.ancestors.append(self.parent.idA)
+            else:
+                self.ancestors += self.parent.ancestors
+                self.ancestors.append(self.parent.idA)
 
+        # </editor-fold>
 
 
         # check if Agent has a valid preference
@@ -88,19 +100,31 @@ class Agent(object):
 
             self.setIDA()
 
-            # ToDo: differentiation between Agents in the 1st Gen and the following ones, just use #ofAgents as threshold
-            if self.preference == "meat":
-                self.thelist = REx.recipesMeat
-            elif self.preference == "fish":
-                self.thelist = REx.recipesFish
-            elif self.preference == "veggi":
-                self.thelist = REx.recipesVeggi
+            # ReviewMe: differentiation between Agents in the 1st Gen and the following ones, just use number of Agents as threshold
+            # an 'Original' Agent or not?
+            if self.ancestors.__len__() > 0:
 
-            # only use the main preference to randomly pick recipe
+                # every agent should get the recipe assigned that was the winner in his parents social group
+                # the parent ID is:     self.ancestors[self.ancestors.__len__()-1]] FixMe: ne ist der UR-Ahn, muss anders rum
+                # the Agent instance for that ID can be found (in constant time) under:
+                #                       Generation.agentsOverGenerations[self.ancestors[self.ancestors.__len__()-1]]
 
-            self.recipies = random.sample(self.thelist,1)
-            # determine what time is acceptable for this Agent
-            self.timePref = self.recipies[0].prep_time
+                index_gen = Generation.agentsOverGenerations[self.ancestors[self.ancestors.__len__()-1]].sgID[0]
+                index_socLst = Generation.agentsOverGenerations[self.ancestors[self.ancestors.__len__()-1]].sgID[1]
+                self.recipies.append(Generation.WinningArrsOverGenerations[index_gen][index_socLst])
+
+            else:
+                if self.preference == "meat":
+                    self.thelist = REx.recipesMeat
+                elif self.preference == "fish":
+                    self.thelist = REx.recipesFish
+                elif self.preference == "veggi":
+                    self.thelist = REx.recipesVeggi
+
+                # only use the main preference to randomly pick recipe
+                self.recipies = random.sample(self.thelist,1)
+                # determine what time is acceptable for this Agent
+                self.timePref = self.recipies[0].prep_time
 
         else:
             print("Agent.__init__() - error: false parameters at instantiation")
@@ -110,7 +134,7 @@ class Agent(object):
 
     def __eq__(self,other):
         # test for equality according to our definition
-        # question arises: when are two recipes equal = ReviseMe
+        # question arises: when are two recipes equal = ReviewMe
         if type(self)==type(other):
             if (self.retIDA() == other.retIDA()):
                 return True
@@ -141,7 +165,7 @@ class Agent(object):
 
     def judgeMyRec(self,agentOb):
 
-        # ReviseMe: Balancing of the points assigned to the individual Recipe score
+        # ReviewMe: Balancing of the points assigned to the individual Recipe score
         # if each ingred gets one point we have a bias for recipies with many
         # ingreds (not necessarily a bad thing), but we have to adjust the time too
         # by using margins as discussed, e.g., fast - medium - long and respective points
@@ -155,4 +179,14 @@ class Agent(object):
                     if i in  self.retRec().ingredients: self.retRec().score += 1
                 # FixMe: Range for number of ingreds
 
+    def setSocGrp(self,genCounter,sgID):
+        """
+        Sets the ID for this Agents Social Group
+        :param genCounter: Generation in which this Agent occurred
+        :param sgID: Social Group in which this Agent occurred
+        :return: nothing
+        """
+        self.sgID = [genCounter,sgID]
 
+    def getSocGrp(self):
+        return "Gen-{:2} SG-{:2}".format(self.sgID[0],self.sgID[1])
