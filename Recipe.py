@@ -1,13 +1,26 @@
-#Extracts recipes from text files of source:
-#    http://mc6help.tripod.com/RecipeLibrary/RecipeLibrary.htm
+'''
+    Cultural Evolution Simulation
+
+    Team members:   Alla Muench / Andreas Daul / Holger Muth-Hellebrandt
+
+    Course:         Introduction into Python - WS 2016
+
+    Task:           Simulate changes in recipes within a population of Agents over several
+                    generations depending on different rule sets.
+
+    Module:         Recipe.py
+
+    Module Descr.:  Extracts & processes recipes from raw text resource from source:
+                    http://mc6help.tripod.com/RecipeLibrary/RecipeLibrary.htm (access 26/02/16)
+'''
+
 import glob, re, os, pprint, sys
 
-#CHANGE TO YOUR RECIPE DIRECTORY
-recipes_dir = r"/media/HDD/resources/Recipes/"
+recipes_dir = os.path.dirname(os.path.realpath(__file__)) + "/Recipes/"
 
-recipes_raw = []
+recipes_raw = []        #list of unprocessed splitted recipe strings
 recipes = []            #list of all recipe objects
-recipesMeat = []
+recipesMeat = []        
 recipesFish = []
 recipesVeggi = []
 
@@ -15,6 +28,7 @@ all_ingredients = []    #list of all ingredients of all recipes
 
 class recipe:
     def __init__(self, category, title, prep_time, ingredients):
+
 
         if category == "beef" or category == "pork": 
             category = "meat"
@@ -31,16 +45,17 @@ class recipe:
         # -----------------------------------------------
         self.counter = 0                    #for testing only
 
-
+#CLEANUP OF INGREDIENTS STRINGS
 def clean_ingredients(ingr_list):
     clean_list = []
     for ingredient in ingr_list:
         ingredient = re.sub("(\(.*\))|( -- .*)|(or .* and .*)|(\*|\;|--)", "", ingredient)
-        ingredient = ingredient.split("  ") #splits ingredient from ingredient amount
+        ingredient = ingredient.split("  ") #splits ingredient from amount of ingredient
         ingredient = ingredient[-1].lower().strip()
         clean_list.append(ingredient)
     return clean_list
 
+#GROUPING OF RECIPES
 def recipeDiff(r):
     if r.category=="meat":
         recipesMeat.append(r)
@@ -51,26 +66,33 @@ def recipeDiff(r):
     else:
         sys.exit("Error in recipe_extractor.py, lines 35, wrong recipe type handed over from source txt file.")
 
-#FOR EACH TEXT FILE:
+#TODO: needed?
+def retAllIngreds():
+    index = 0
+    i = 0
+    pprint.pprint(all_ingredients)
+
+
+#GATERING ALL TEXT FILES:
 file_list = glob.glob(recipes_dir + "*.txt")
 
+#Windows OS
 if os.name == "nt":
-#Windows OS    
+
     for directory in file_list:
 
         #GET CATEGORY
-        category = directory.split("\\") #split up dir path /resources/Recipes/x.txt
+        category = directory.split("\\") #split up dir path /Recipes/x.txt
         category = category[-1]         #take last level in directory
         category = category.strip(".txt").lower()
 
-        #read file and slice up into recipes
+        #READ FILE & SLICE INTO RECIPES
         raw_text = open(directory, mode="r");
         all_recipes = raw_text.read()
         raw_text.close()
 
         separator = "* Exported from MasterCook *"
         recipes_raw = all_recipes.split(separator)
-        #OUTPUT: recipes_raw, list
 
         for r in recipes_raw[1:]:
 
@@ -80,7 +102,6 @@ if os.name == "nt":
 
             #GET PREP TIME
             prep_time = r1[5]
-            #time_pattern = re.compile("\d:\d\d\r")
             time_pattern = re.compile("\d:\d\d")
             r1 = time_pattern.findall(prep_time)
             prep_time = r1[0].strip()
@@ -100,29 +121,28 @@ if os.name == "nt":
                 recipeDiff(r)
                 recipes.append(r)
 
-                #ADDING INGREDIENTS TO GLOBAL LIST
+                #ADDING INGREDIENTS TO GLOBAL INGREDIENTS LIST
                 for ingredient in ingredients_list:
                     if ingredient not in all_ingredients:
                         all_ingredients.append(ingredient)
 
-
-else:
 #Unix OS
+else:
+
     for directory in file_list:
 
         #GET CATEGORY
-        category = directory.split("/") #split up dir path /resources/Recipes/x.txt
+        category = directory.split("/") #split up dir path /Recipes/x.txt
         category = category[-1]         #take last level in directory
         category = category.strip(".txt").lower()
         
-        #read file and slice up into recipes
+        #READ FILE & SLICE INTO RECIPES
         raw_text = open(directory, mode="r"); 
         all_recipes = raw_text.read()
         raw_text.close()
 
         separator = "* Exported from MasterCook *"
         recipes_raw = all_recipes.split(separator)
-        #OUTPUT: recipes_raw, list
         
         for r in recipes_raw[1:]:
 
@@ -132,7 +152,6 @@ else:
             
             #GET PREP TIME
             prep_time = r1[5]
-            #time_pattern = re.compile("\d:\d\d\r")
             time_pattern = re.compile("\d:\d\d")
             r1 = time_pattern.findall(prep_time)
             prep_time = r1[0].strip()   
@@ -152,16 +171,11 @@ else:
                 recipeDiff(r)
                 recipes.append(r)
                 
-                #ADDING INGREDIENTS TO GLOBAL LIST
+                #ADDING INGREDIENTS TO GLOBAL INGREDIENTS LIST
                 for ingredient in ingredients_list:
                     if ingredient not in all_ingredients:
                         all_ingredients.append(ingredient)
 
-
-def retAllIngreds():
-    index = 0
-    i = 0
-    pprint.pprint(all_ingredients)
 
 
 if __name__ == "__main__":

@@ -18,7 +18,7 @@ import sys
 import itertools    # for permutations on our agent array
 
 
-import recipe_extractor as REx
+import Recipe as REx
 
 
 random.seed()
@@ -123,22 +123,31 @@ class Agent(object):
     def getPref(self):
         return self.preference
 
-
-    def Mutate(self, recipe, run):
-        # ToDo: Mutate() still unfinished
-        #
-
-        # method to simulate random changes in recipes: this is meant to consider
-        # a bad memory in our individual Agents for example
-        if not isinstance(recipe, REx.recipe):
-            sys.exit("Agent.Mutate(): argument is not Recipe type! \nProgram ends!")
-
-        # if <run> variable is 1 dont to anything, otherwise let random changes happen
-        mutator = random.randrange(30)
-        if mutator == 1:
+    def mutate(self):
+        
+        recipe = self.thelist
+        actions = ["none", "add", "delete", "substitute"]
+        random_number = random.randrange(len(actions))
+    
+        action = actions[random_number]
+    
+        if action == "none":
             pass
-
-
+        elif action == "delete":
+            x = random.randrange(recipe.ing_size)
+            recipe.ingredients.pop(x)
+        elif action == "add":
+            x = random.randrange(len(all_ingredients))
+            recipe.ingredients.append(all_ingredients[x])
+        else:
+            x = random.randrange(recipe.ing_size)
+            recipe.ingredients.pop(x)
+            y = random.randrange(len(all_ingredients))
+            recipe.ingredients.append(all_ingredients[y])
+    
+        #return recipe.ingredients
+    
+    
     def judgeMyRec(self,agentOb):
 
         # ReviseMe: Balancing of the points assigned to the individual Recipe score

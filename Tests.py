@@ -15,7 +15,7 @@ __author__ = 'AD'
 
 
 import Agent
-import recipe_extractor as REx
+import Recipe as REx
 import Generation
 
 
