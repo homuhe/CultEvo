@@ -150,10 +150,9 @@ def RetSGArrs(index):
         print
         print "new Group: Size: " + str(SGarr.__len__() )
         for agnt in SGarr:
-                print " AgentSGID: {:3} | AgentID {:3}  |   RecScore: {:3}  |  RecCateg: {:6}  |  #Ingreds: {:3}".format(agnt.sgID,agnt.retIDA(),
+                print "Agent {:3}  |  RecScore: {:3}  |  RecCateg: {:6}  |  #Ingreds: {:3}".format(agnt.retIDA(),
                                    agnt.retRec().score,agnt.retRec().category, agnt.retRec().ing_size)
                 counter += 1
-        print
 
 
     print ("----------")

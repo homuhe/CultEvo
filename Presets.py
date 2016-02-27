@@ -13,24 +13,19 @@ __author__ = 'AD'
 '''
 
 
-# ===============================
-# Amount of Generations
-
-generations = 2
-
 # ========================================
 # Amount of Agents per Generation
-numberAgents = 6
+numberAgents = 9
 
 # Percentages of our main recipe classes
-facMeat =  2
-facFish =  2
-facVeggi = 2
+facMeat =  3
+facFish =  3
+facVeggi = 3
 
 
 # ====================================================
 # Maximum size of social groups/ groups of 'friends'
-maxSocSize = 8
+maxSocSize = 5
 
 
 # =================================================================================================
