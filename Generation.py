@@ -4,7 +4,7 @@ import random
 import sys
 
 import Agent
-import recipe_extractor as REx
+import Recipe as REx
 import Presets as P
 
 global agentsOverGenerations
