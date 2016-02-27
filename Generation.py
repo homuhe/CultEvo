@@ -20,7 +20,11 @@ SocialGroups = {}
 
 
 def DetSGArrayWinners(counter):
-    # find winning recipies for a generation determined by 'counter'
+    """
+     Find winning recipies for a generation determined by 'counter'
+    :param counter: The index determining the desired generation
+    :return: List of all 'Recipies' that won in their respective social group
+    """
 
     winLst = [REx.recipe("", "", "", [])]
 
@@ -30,14 +34,19 @@ def DetSGArrayWinners(counter):
     for agntGrp in scGrps:
 
         cntb = cnta + 1
-        for agnt in agntGrp:
+        if agntGrp.__len__() > 1:
+            for agnt in agntGrp:
 
-            if winLst.__len__() < cntb:
-                winLst.append(agnt.retRec())
-            else:
-                # if we have the same score we go for first come first serve
-                if winLst[cnta].score < agnt.retRec().score:
-                    winLst[cnta] = agnt.retRec()
+                if winLst.__len__() < cntb:
+                    winLst.append(agnt.retRec())
+                else:
+                    # if we have the same score we go for first come first serve
+                    if winLst[cnta].score < agnt.retRec().score:
+                        winLst[cnta] = agnt.retRec()
+        elif isinstance(agntGrp[0],Agent.Agent):
+            winLst.append(agntGrp[0].retRec())
+        else:
+            sys.exit("Generation.DetSGArrayWinners(): Could not determine winning recipies!")
         cnta += 1
     return winLst
 
@@ -49,7 +58,7 @@ class Generation(object):
     #    Infos regarding Lists and Dicts
     #
     # ======================================
-    # All Agents ever created
+    # All Agents ever created, one consecutive list
     agentsOverGenerations = []
 
     # same as above just as a dictionary
@@ -66,17 +75,17 @@ class Generation(object):
     # the Array holding the recipies for an individual Generation
     genRecArr = []
 
-    # Dict holding the Recipies that got the highest score in each social
+    # List holding the Recipies that got the highest score in each social
     # group and were passed on
 
-
-
     winGenRecArr = []
+
+
     # The name says it all, Dictionary holding the social groups for each Generation
     SocialGroups = {}
     SGArrs = []
 
-    # ReviseMe: Number of modifications per Agents and recipe
+    # ReviewMe: Number of modifications per Agents and recipe
     # cntMod = 1
 
     def __init__(self, numberAgents, counterGen):
@@ -85,7 +94,6 @@ class Generation(object):
         #   ===================================
 
         self.counterGen = counterGen
-
         self.countGenUp = 0
 
         # maximum size of social group
@@ -95,66 +103,32 @@ class Generation(object):
 
         while self.countGenUp < self.counterGen:
 
-            # ===========================
-            #       MAIN 'IF' BRANCH
-            # ===========================
+            # ===================================
+            #           MAIN 'IF' BRANCH
+            # - Running through the Generations -
+            # ===================================
 
-            if self.countGenUp > 0:
 
-                # ================================
-                #  ToDo: higher Order Generations
-                # ================================
+            if self.countGenUp == 0:
 
-                # <editor-fold desc="GenSetUp">
+                # ====================================
+                #
+                #           FIRST GENERATION
+                # -            base case             -
+                # ====================================
+
+
+                # <editor-fold desc="1st Generation SetUp">
 
                 # assigning the arrays only for the first Generation
+                self.SGArrs = []
                 SocialGroups[self.countGenUp] = self.SGArrs
 
-                RecListOverGenerations[self.counterGen] = self.genRecArr
-
-                WinningArrsOverGenerations[self.counterGen] = self.winGenRecArr
-
-                self.agentArr = []
-                agentsOverAllDict[self.countGenUp] = self.agentArr
-
-                # populating the array with Agent instances as offsprings of our
-                # predecessor generation
-
-                for x in agentsOverAllDict[self.countGenUp-1]:
-                    self.agnt = Agent.Agent(x.preference, x)
-                    # You get to judge your own culinary oeuvre
-                    self.agnt.judgeMyRec(self.agnt)
-                    # after creating an agent we store his/her Recipe in genRecArr
-                    self.genRecArr.append(self.agnt.retRec())
-                    self.agentArr.append(self.agnt)
-                    agentsOverGenerations.append(self.agnt)
-
-                # if we want to let them interact we need to shuffle the array so that the instances are
-                # randomly distributed
-                random.shuffle(self.agentArr)
-                # Tests.CntTest(agentsOverGenerations)
-                # </editor-fold>
-
-                # FixMe: take pass out and complete me
-                #pass
-            elif self.countGenUp == 0:
-
-                # ============================================
-                #
-                #        FIRST GENERATION base case
-                #
-                #=============================================
-
-
-                # <editor-fold desc="GenSetUp">
-
-                # assigning the arrays only for the first Generation
-                SocialGroups[self.countGenUp] = self.SGArrs
-
+                self.genRecArr = []
                 RecListOverGenerations[self.countGenUp] = self.genRecArr
 
+                self.winGenRecArr = []
                 WinningArrsOverGenerations[self.countGenUp] = self.winGenRecArr
-
 
                 self.agentArr = []
                 agentsOverAllDict[self.countGenUp] = self.agentArr
@@ -172,9 +146,12 @@ class Generation(object):
                         "Generations.__init__(): Preference percentages don't add up too 100%, please check! \nProgram ends!")
 
                 # populating the array with Agent instances
-
-                for x in weightedPreferences:
-                    self.agnt = Agent.Agent(x, None)
+                #print()
+                #print "  --- --- --- "
+                #print "Agents in Generation: {:3}".format(self.countGenUp)
+                for pref in weightedPreferences:
+                    self.agnt = Agent.Agent(pref, None)
+                #    print "self.agnt idA = {:3} ||  Ancestors = {:3}".format(self.agnt.idA,self.agnt.ancestors)
                     self.agnt.judgeMyRec(self.agnt)
                     # after creating an agent we store his/her Recipe in genRecArr
                     self.genRecArr.append(self.agnt.retRec())
@@ -188,7 +165,8 @@ class Generation(object):
                 # Tests.CntTest(agentsOverGenerations)
                 # </editor-fold>
 
-                # ReviseMe: Interactions
+                # ReviewMe: Interactions
+                # <editor-fold desc="SocGroups and Interactions">
 
                 self.gen1 = self.agentArr[:]
 
@@ -197,9 +175,9 @@ class Generation(object):
                     # AmDone: we need a way to adjust our upper bound for the random sampling
                     # so that we dont want to sample 10 items when our array only consists of
                     # ,e.g., 9 or less elements
-                    # <editor-fold desc="SocArrs">
+
                     if self.gen1.__len__() >= self.maxSocSize:
-                        # <editor-fold desc="RandomSocArr">
+
                         try:
                             self.friendArr = random.sample(self.gen1, random.randrange(2, self.maxSocSize))
 
@@ -211,19 +189,21 @@ class Generation(object):
 
                             # right now we have set up a social environment
 
-                            if self.friendArr.__len__() > 1:
+                            if self.friendArr.__len__() > 0:
                                 for me in self.friendArr:
+                                    # AmDone: remember that you belong to this social group
+                                    me.setSocGrp(self.countGenUp,self.SGArrs.__len__())
                                     # dont judge your own recipe
                                     self.tmpArr = self.friendArr[:]
                                     self.tmpArr.remove(me)
                                     for friend in self.tmpArr:
                                         me.judgeMyRec(friend)
 
-                            else:
-                                pass
+                            #else:
+                            #    pass
                         except ValueError:
                             print ("Could not create social environment of large size!")
-                            # </editor-fold>
+
 
                     # only little amount of Agents left in the array
                     elif self.gen1.__len__() >= 2:
@@ -234,10 +214,12 @@ class Generation(object):
 
                             for x in self.friendArr:
                                 self.gen1.remove(x)
-                            # right now we have set up a social environment
+                            # right now, at this point, we should have set up a social environment
 
-                            if self.friendArr.__len__() > 1:
+                            if self.friendArr.__len__() > 0:
                                 for individual in self.friendArr:
+                                    #AmDone: also soc group assignment
+                                    individual.setSocGrp(self.countGenUp,self.SGArrs.__len__())
                                     # dont judge your own recipe
                                     self.tmpArr = self.friendArr[:]
                                     self.tmpArr.remove(individual)
@@ -246,28 +228,158 @@ class Generation(object):
 
                         except ValueError:
                             print ("Could not create social environment of small size!")
-                    # </editor-fold>
 
-                    else:  # again, dont judge your own again
 
+                    else:
+                        # again, dont judge your own again, only keep track of lonely singles in the social statistics
+                        # ReviewMe: Careful now: we pass on a single agent as a LIST with one entry: DO NOT MIX THAT UP!
+                        self.SGArrs.append([self.gen1[0]])
+                        self.gen1[0].setSocGrp(self.countGenUp,self.SGArrs.__len__())
                         self.gen1.pop()
 
                         # We have created the first generation now, instantiated Agents,
                         # given them recipies,
                         # and judged the recipies by the individual Agent and the peers
-                        # in his randomly selected social group (ReviseMe: social group size as GUI element)
+                        # in his randomly selected social group (ReviewMe: social group size as GUI element)
+                        # ReviewMe: we could go for a copy by reference approach with the sgID as well instead
+                        # saving a little bit of memory, but the code isnt optimised anyway, so just take a note
 
 
+                # </editor-fold>
                 ###
+                # print self.winGenRecArr.__len__()
+                self.winGenRecArr = DetSGArrayWinners(self.countGenUp)
+
+                WinningArrsOverGenerations[self.countGenUp] = self.winGenRecArr
                # print self.winGenRecArr.__len__()
+
+            elif self.countGenUp > 0:
+
+                # ============================================
+                #
+                #           HIGHER ORDER GENERATIONS
+                #  ToDo: individual higher Order Generations
+                # ============================================
+
+
+                # <editor-fold desc="Higher Order Generation SetUp">
+                self.SGArrs = []
+                SocialGroups[self.countGenUp] = self.SGArrs
+
+                self.genRecArr = []
+                RecListOverGenerations[self.countGenUp] = self.genRecArr
+
+                self.winGenRecArr = []
+                WinningArrsOverGenerations[self.countGenUp] = self.winGenRecArr
+
+                self.agentArr = []
+                agentsOverAllDict[self.countGenUp] = self.agentArr
+
+                # populating the array with Agent instances as offsprings of our
+                # predecessor generation
+                #print()
+                #print "  --- --- --- "
+                #print "Agents in Generation: {:3}".format(self.countGenUp)
+                for x in agentsOverAllDict[self.countGenUp-1]:
+                    self.agnt = Agent.Agent(x.preference, x)
+                    #print
+                    #print "self.agnt idA = {:3} ||  x.idA = {:3}".format(self.agnt.idA,x.idA)
+                    #print "Py ID self.agnt.ancestors: {:10}  || Py ID x.ancestors: {:10}".format(id(self.agnt.ancestors),id(x.ancestors))
+                    #print "own ancestors: {:25}".format(self.agnt.ancestors)
+                    #print "x's ancestors: {:25}".format(x.ancestors)
+                    # You get to judge your own culinary oeuvre
+                    self.agnt.judgeMyRec(self.agnt)
+                    # after creating an agent we store his/her Recipe in genRecArr
+                    self.genRecArr.append(self.agnt.retRec())
+                    self.agentArr.append(self.agnt)
+                    agentsOverGenerations.append(self.agnt)
+
+                # if we want to let them interact we need to shuffle the array so that the instances are
+                # randomly distributed
+                random.shuffle(self.agentArr)
+                # Tests.CntTest(agentsOverGenerations)
+                # </editor-fold>
+
+                # ToDo : Higher Order Generation interactions
+                # ReviewMe : outsorce the whole code block, its getting harder and harder to read, even with folding
+                # FixMe : assign the sgID !!!
+                # <editor-fold desc="Higher Order Generation interactions">
+                self.gen1 = self.agentArr[:]
+
+                while self.gen1.__len__() != 0:
+
+                    # AmDone: we need a way to adjust our upper bound for the random sampling
+                    # so that we dont want to sample 10 items when our array only consists of
+                    # ,e.g., 9 or less elements
+
+                    if self.gen1.__len__() >= self.maxSocSize:
+
+                        try:
+                            self.friendArr = random.sample(self.gen1, random.randrange(2, self.maxSocSize))
+
+                            self.SGArrs.append(self.friendArr[:])
+
+                            # popping the Agents out of the tmp collection so we dont draw them twice
+                            for friendx in self.friendArr:
+                                self.gen1.remove(friendx)
+
+                            # right now we have set up a social environment
+
+                            if self.friendArr.__len__() > 0:
+                                for me in self.friendArr:
+                                    # AmDone: remember that you belong to this social group
+                                    me.setSocGrp(self.countGenUp,self.SGArrs.__len__())
+                                    # dont judge your own recipe
+                                    self.tmpArr = self.friendArr[:]
+                                    self.tmpArr.remove(me)
+                                    for friend in self.tmpArr:
+                                        me.judgeMyRec(friend)
+
+                            #else:
+                            #    pass
+                        except ValueError:
+                            print ("Could not create social environment of large size!")
+
+
+                    # only little amount of Agents left in the array
+                    elif self.gen1.__len__() >= 2:
+
+                        try:
+                            self.friendArr = random.sample(self.gen1, 2)
+                            self.SGArrs.append(self.friendArr[:])
+
+                            for x in self.friendArr:
+                                self.gen1.remove(x)
+                            # right now, at this point, we should have set up a social environment
+
+                            if self.friendArr.__len__() > 0:
+                                for individual in self.friendArr:
+                                    #AmDone: also soc group assignment
+                                    individual.setSocGrp(self.countGenUp,self.SGArrs.__len__())
+                                    # dont judge your own recipe
+                                    self.tmpArr = self.friendArr[:]
+                                    self.tmpArr.remove(individual)
+                                    for friend in self.tmpArr:
+                                        individual.judgeMyRec(friend)
+
+                        except ValueError:
+                            print ("Could not create social environment of small size!")
+                # </editor-fold>
+
+                # print self.winGenRecArr.__len__()
                 self.winGenRecArr = DetSGArrayWinners(self.countGenUp)
 
                 WinningArrsOverGenerations[self.countGenUp] = self.winGenRecArr
                # print self.winGenRecArr.__len__()
 
 
-            # ReviseMe: make sure this is working as it is supposed to!
+
+
+
+
+            # AmDone: make sure this is working as it is supposed to!
             self.countGenUp += 1
+
 
 
 
@@ -287,3 +399,5 @@ class Generation(object):
         :return: Array with ALL Agents over all Generations
         '''
         return agentsOverGenerations
+
+
