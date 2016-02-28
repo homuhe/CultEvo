@@ -51,10 +51,10 @@ agentArray = agentGen.getAgentArr()
 #Test.RetGenRecArr(0)
 #Test.RetWinGenRecArr(0)
 
-#for gen in range(Generation.SocialGroups.__len__()):
-#    print "Generation: " + str(gen)
-print()
-Test.RetSGArrs(0)
+for gen in range(Generation.SocialGroups.__len__()):
+    print "Generation: " + str(gen)
+    print()
+    Test.RetSGArrs(gen)
 
 #print Generation.WinningArrsOverGenerations.__len__()
 #Test.RetWinGenRecArr(0)

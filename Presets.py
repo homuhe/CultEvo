@@ -16,16 +16,16 @@ __author__ = 'AD'
 # ===============================
 # Amount of Generations
 
-generations = 2
+generations = 5
 
 # ========================================
 # Amount of Agents per Generation
-numberAgents = 6
+numberAgents = 15
 
 # Percentages of our main recipe classes
-facMeat =  2
-facFish =  2
-facVeggi = 2
+facMeat =  5
+facFish =  5
+facVeggi = 5
 
 
 # ====================================================
