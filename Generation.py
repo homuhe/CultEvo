@@ -192,7 +192,8 @@ class Generation(object):
                             if self.friendArr.__len__() > 0:
                                 for me in self.friendArr:
                                     # AmDone: remember that you belong to this social group
-                                    me.setSocGrp(self.countGenUp,self.SGArrs.__len__())
+                                    # ReviewMe: we want to index a list with the length of the list ... so (len()-1) !
+                                    me.setSocGrp(self.countGenUp,self.SGArrs.__len__()-1)
                                     # dont judge your own recipe
                                     self.tmpArr = self.friendArr[:]
                                     self.tmpArr.remove(me)
@@ -219,7 +220,7 @@ class Generation(object):
                             if self.friendArr.__len__() > 0:
                                 for individual in self.friendArr:
                                     #AmDone: also soc group assignment
-                                    individual.setSocGrp(self.countGenUp,self.SGArrs.__len__())
+                                    individual.setSocGrp(self.countGenUp,self.SGArrs.__len__()-1)
                                     # dont judge your own recipe
                                     self.tmpArr = self.friendArr[:]
                                     self.tmpArr.remove(individual)
@@ -234,7 +235,7 @@ class Generation(object):
                         # again, dont judge your own again, only keep track of lonely singles in the social statistics
                         # ReviewMe: Careful now: we pass on a single agent as a LIST with one entry: DO NOT MIX THAT UP!
                         self.SGArrs.append([self.gen1[0]])
-                        self.gen1[0].setSocGrp(self.countGenUp,self.SGArrs.__len__())
+                        self.gen1[0].setSocGrp(self.countGenUp,self.SGArrs.__len__()-1)
                         self.gen1.pop()
 
                         # We have created the first generation now, instantiated Agents,
@@ -328,7 +329,7 @@ class Generation(object):
                             if self.friendArr.__len__() > 0:
                                 for me in self.friendArr:
                                     # AmDone: remember that you belong to this social group
-                                    me.setSocGrp(self.countGenUp,self.SGArrs.__len__())
+                                    me.setSocGrp(self.countGenUp,self.SGArrs.__len__()-1)
                                     # dont judge your own recipe
                                     self.tmpArr = self.friendArr[:]
                                     self.tmpArr.remove(me)
@@ -355,7 +356,7 @@ class Generation(object):
                             if self.friendArr.__len__() > 0:
                                 for individual in self.friendArr:
                                     #AmDone: also soc group assignment
-                                    individual.setSocGrp(self.countGenUp,self.SGArrs.__len__())
+                                    individual.setSocGrp(self.countGenUp,self.SGArrs.__len__()-1)
                                     # dont judge your own recipe
                                     self.tmpArr = self.friendArr[:]
                                     self.tmpArr.remove(individual)
@@ -364,13 +365,22 @@ class Generation(object):
 
                         except ValueError:
                             print ("Could not create social environment of small size!")
+
+                    # FixMe: correct? left it out originally
+                    else:
+                        # again, dont judge your own again, only keep track of lonely singles in the social statistics
+                        # ReviewMe: Careful now: we pass on a single agent as a LIST with one entry: DO NOT MIX THAT UP!
+                        self.SGArrs.append([self.gen1[0]])
+                        self.gen1[0].setSocGrp(self.countGenUp,self.SGArrs.__len__()-1)
+                        self.gen1.pop()
+
                 # </editor-fold>
 
                 # print self.winGenRecArr.__len__()
                 self.winGenRecArr = DetSGArrayWinners(self.countGenUp)
 
                 WinningArrsOverGenerations[self.countGenUp] = self.winGenRecArr
-               # print self.winGenRecArr.__len__()
+                # print self.winGenRecArr.__len__()
 
 
 
