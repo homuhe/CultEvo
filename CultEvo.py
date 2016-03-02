@@ -118,14 +118,14 @@ print
 print "Averages and measures of central location"
 print "........................................."
 print
-print "mean      : {:>6.2f}".format(stat.mean(lstOfGenerationsNumbers))
+print "mean        : {:>6.2f}".format(stat.mean(lstOfGenerationsNumbers))
 print "median      : {:>6.2f}".format(stat.median(lstOfGenerationsNumbers))
 print "mean_low    : {:>6.2f}".format(stat.median_low(lstOfGenerationsNumbers))
 print "mean_high   : {:>6.2f}".format(stat.median_high(lstOfGenerationsNumbers))
 print "mean_grouped: {:>6.2f}".format(stat.median_grouped(lstOfGenerationsNumbers))
 try:
     print "mode        : {:>6.2f}".format(stat.mode(lstOfGenerationsNumbers) )
-except exceptions.StatisticsError:
+except :
     print "mode        : two equal values found"
 print
 print
