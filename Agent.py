@@ -154,7 +154,7 @@ class Agent(object):
 
     def mutate(self):
         
-        recipe = self.thelist
+        recipe = self.recipies[0]
         actions = ["none", "add", "delete", "substitute"]
         random_number = random.randrange(len(actions))
     
@@ -164,15 +164,18 @@ class Agent(object):
             pass
         elif action == "delete":
             x = random.randrange(recipe.ing_size)
+            recipe.title = recipe.title + " without " + x
             recipe.ingredients.pop(x)
         elif action == "add":
             x = random.randrange(len(all_ingredients))
+            recipe.title = recipe.title + " with " + x
             recipe.ingredients.append(all_ingredients[x])
         else:
             x = random.randrange(recipe.ing_size)
             recipe.ingredients.pop(x)
             y = random.randrange(len(all_ingredients))
             recipe.ingredients.append(all_ingredients[y])
+            recipe.title = recipe.title + " with " + y + " instead of " + x
     
         #return recipe.ingredients
     
