@@ -65,6 +65,32 @@ class Agent(object):
         # ReviewMe : giving back only the 1st one at the moment
         return self.recipies[0]
 
+    def mutate(self):
+        
+        recipe = self.recipies[0]
+        actions = ["none", "add", "delete", "substitute"]
+        random_number = random.randrange(len(actions))
+    
+        action = actions[random_number]
+    
+        if action == "none":
+            pass
+        elif action == "delete":
+            x = random.randrange(recipe.ing_size)
+            ingr = recipe.ingredients.pop(x)
+            recipe.mutate_history.append("deleted " + ingr)
+        elif action == "add":
+            x = random.randrange(len(all_ingredients))
+            recipe.ingredients.append(all_ingredients[x])
+            recipe.mutate_history.append("added " + all_ingredients[x])
+        else:
+            x = random.randrange(recipe.ing_size)
+            ingr1 = recipe.ingredients.pop(x)
+            y = random.randrange(len(all_ingredients))
+            recipe.ingredients.append(all_ingredients[y])
+            recipe.mutate_history.append("deleted " + ingr1)
+            recipe.mutate_history.append("added " + all_ingredients[y])
+    
 
 
     def __init__(self, pref,parent):
@@ -151,33 +177,6 @@ class Agent(object):
 
     def getPref(self):
         return self.preference
-
-    def mutate(self):
-        
-        recipe = self.recipies[0]
-        actions = ["none", "add", "delete", "substitute"]
-        random_number = random.randrange(len(actions))
-    
-        action = actions[random_number]
-    
-        if action == "none":
-            pass
-        elif action == "delete":
-            x = random.randrange(recipe.ing_size)
-            recipe.title = recipe.title + " without " + x
-            recipe.ingredients.pop(x)
-        elif action == "add":
-            x = random.randrange(len(all_ingredients))
-            recipe.title = recipe.title + " with " + x
-            recipe.ingredients.append(all_ingredients[x])
-        else:
-            x = random.randrange(recipe.ing_size)
-            recipe.ingredients.pop(x)
-            y = random.randrange(len(all_ingredients))
-            recipe.ingredients.append(all_ingredients[y])
-            recipe.title = recipe.title + " with " + y + " instead of " + x
-    
-        #return recipe.ingredients
     
     
     def judgeMyRec(self,agentOb):
