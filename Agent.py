@@ -17,6 +17,7 @@ import random
 import sys
 import itertools    # for permutations on our agent array
 import Generation
+import Presets
 import copy
 from copy import deepcopy
 
@@ -67,29 +68,30 @@ class Agent(object):
 
     def mutate(self):
         
-        recipe = self.recipies[0]
-        actions = ["none", "add", "delete", "substitute"]
-        random_number = random.randrange(len(actions))
-    
-        action = actions[random_number]
-    
-        if action == "none":
-            pass
-        elif action == "delete":
-            x = random.randrange(recipe.ing_size)
-            ingr = recipe.ingredients.pop(x)
-            recipe.mutate_history.append("deleted " + ingr)
-        elif action == "add":
-            x = random.randrange(len(all_ingredients))
-            recipe.ingredients.append(all_ingredients[x])
-            recipe.mutate_history.append("added " + all_ingredients[x])
-        else:
-            x = random.randrange(recipe.ing_size)
-            ingr1 = recipe.ingredients.pop(x)
-            y = random.randrange(len(all_ingredients))
-            recipe.ingredients.append(all_ingredients[y])
-            recipe.mutate_history.append("deleted " + ingr1)
-            recipe.mutate_history.append("added " + all_ingredients[y])
+        if do_mutate:
+            recipe = self.recipies[0]
+            actions = ["none", "add", "delete", "substitute"]
+            random_number = random.randrange(len(actions))
+        
+            action = actions[random_number]
+        
+            if action == "none":
+                pass
+            elif action == "delete":
+                x = random.randrange(recipe.ing_size)
+                ingr = recipe.ingredients.pop(x)
+                recipe.mutate_history.append("deleted " + ingr)
+            elif action == "add":
+                x = random.randrange(len(all_ingredients))
+                recipe.ingredients.append(all_ingredients[x])
+                recipe.mutate_history.append("added " + all_ingredients[x])
+            else:
+                x = random.randrange(recipe.ing_size)
+                ingr1 = recipe.ingredients.pop(x)
+                y = random.randrange(len(all_ingredients))
+                recipe.ingredients.append(all_ingredients[y])
+                recipe.mutate_history.append("deleted " + ingr1)
+                recipe.mutate_history.append("added " + all_ingredients[y])
     
 
 
