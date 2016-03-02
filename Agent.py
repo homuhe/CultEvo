@@ -76,7 +76,7 @@ class Agent(object):
             action = actions[random_number]
         
             if action == "none":
-                pass
+                recipe.mutate_history.append("none")
             elif action == "delete":
                 x = random.randrange(recipe.ing_size)
                 ingr = recipe.ingredients.pop(x)
