@@ -47,7 +47,7 @@ recDic = {"short":5,"medium":10}            # more than 10 elements implicates a
 # ==============================================================
 # How often should we repeat the individual CultEvo simulation
 
-numberOfSimulationRuns = 10
+numberOfSimulationRuns = 3
 
 # ===============
 # Toggle mutation

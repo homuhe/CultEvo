@@ -17,7 +17,8 @@ import random
 import sys
 import itertools    # for permutations on our agent array
 import Generation
-import Presets
+from Presets import *
+from Recipe import *
 import copy
 from copy import deepcopy
 
@@ -74,24 +75,30 @@ class Agent(object):
             random_number = random.randrange(len(actions))
         
             action = actions[random_number]
-        
+            
+            print
+            print(recipe.ingredients)
+            
             if action == "none":
-                recipe.mutate_history.append("none")
-            elif action == "delete":
-                x = random.randrange(recipe.ing_size)
+                recipe.mutate_history.append([self.idA,"none"])
+            elif action == "delete" and recipe.ing_size >= 3:
+                x = random.randrange(recipe.ing_size-2)
                 ingr = recipe.ingredients.pop(x)
-                recipe.mutate_history.append("deleted " + ingr)
+                recipe.mutate_history.append([self.idA,"deleted " + ingr])
             elif action == "add":
-                x = random.randrange(len(all_ingredients))
+                x = random.randrange(len(all_ingredients)-2)
                 recipe.ingredients.append(all_ingredients[x])
-                recipe.mutate_history.append("added " + all_ingredients[x])
-            else:
-                x = random.randrange(recipe.ing_size)
+                recipe.mutate_history.append([self.idA,"added " + all_ingredients[x]])
+            elif action == "substitute" and recipe.ing_size >= 3:
+                x = random.randrange(recipe.ing_size-2)
                 ingr1 = recipe.ingredients.pop(x)
-                y = random.randrange(len(all_ingredients))
+                y = random.randrange(len(all_ingredients)-2)
                 recipe.ingredients.append(all_ingredients[y])
-                recipe.mutate_history.append("deleted " + ingr1)
-                recipe.mutate_history.append("added " + all_ingredients[y])
+                recipe.mutate_history.append([self.idA,"substituted " + ingr1 + " with " + all_ingredients[y]])
+
+
+        print(recipe.mutate_history)
+        print(recipe.ingredients)
     
 
 
@@ -162,7 +169,7 @@ class Agent(object):
         else:
             print("Agent.__init__() - error: false parameters at instantiation")
 
-
+        self.mutate()
 
 
     def __eq__(self,other):
