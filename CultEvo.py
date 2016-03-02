@@ -19,7 +19,7 @@ import Tests as Test
 import Generation
 import Presets as P
 import exceptions
-import statistics as stat
+import Analysis as stat
 
 
 random.seed()
@@ -118,7 +118,7 @@ print
 print "Averages and measures of central location"
 print "........................................."
 print
-print "mean        : {:>6.2f}".format(stat.mean(lstOfGenerationsNumbers))
+print "mean      : {:>6.2f}".format(stat.mean(lstOfGenerationsNumbers))
 print "median      : {:>6.2f}".format(stat.median(lstOfGenerationsNumbers))
 print "mean_low    : {:>6.2f}".format(stat.median_low(lstOfGenerationsNumbers))
 print "mean_high   : {:>6.2f}".format(stat.median_high(lstOfGenerationsNumbers))
