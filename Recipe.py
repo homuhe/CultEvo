@@ -36,14 +36,28 @@ class recipe:
             category = "veggi"
             
         
-        self.category = category            #string
-        self.title = title                  #string
-        self.prep_time = prep_time          #string of format [0-9]:[0-5][0-9]
-        self.ingredients = ingredients      #list of ingredients
-        self.ing_size = len(ingredients)    #integer
-        self.score = 0                      #score of all points assigned in inter-Agent evaluation steps
+        self.category = category            # string
+        self.title = title                  # string
+        self.prep_time = prep_time          # string of format [0-9]:[0-5][0-9]
+        self.ingredients = ingredients      # list of ingredients
+        self.ing_size = len(ingredients)    # integer
+        self.score = 0                      # score of all points assigned in inter-Agent evaluation steps
+        self.scoreList = []                 # List to keep track of all the awarded points
         # -----------------------------------------------
-        self.counter = 0                    #for testing only
+        self.counter = 0                    # for testing only
+
+    def __eq__(self, other):
+        # since we use DEEPCOPYs we need a different way of comparing Recipes; just by title right now
+        # test for equality according to our definition
+        # question arises: when are two recipes equal = ReviewMe
+        if type(self) == type(other):
+
+            if self.title == other.title:
+                return True
+            else:
+                return False
+        else:
+            return "Agent.__eq__() : Wrong type! Need 'Agent' type to compare."
 
 #CLEANUP OF INGREDIENTS STRINGS
 def clean_ingredients(ingr_list):

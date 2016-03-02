@@ -16,21 +16,25 @@ __author__ = 'AD'
 # ===============================
 # Amount of Generations
 
-generations = 5
+generations = 15
 
 # ========================================
 # Amount of Agents per Generation
-numberAgents = 15
+numberAgents = 60
 
 # Percentages of our main recipe classes
-facMeat =  5
-facFish =  5
-facVeggi = 5
+facMeat =  20
+facFish =  20
+facVeggi = 20
 
 
 # ====================================================
 # Maximum size of social groups/ groups of 'friends'
-maxSocSize = 8
+# ReviewMe: should be size (n) due to use of range, but is actually (n-1)
+# if maxSocSize is greater than the initial amount of agents we get social
+# groups of size two and one exclusively;
+# maxSocSize must not be smaller than 3!
+maxSocSize = 3
 
 
 # =================================================================================================
@@ -38,3 +42,9 @@ maxSocSize = 8
 
 timeDic = {"short":"0:25","medium":"1:00"}  # more than 1:00 implicates long
 recDic = {"short":5,"medium":10}            # more than 10 elements implicates a long list
+
+
+# ==============================================================
+# How often should we repeat the individual CultEvo simulation
+
+numberOfSimulationRuns = 100

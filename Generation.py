@@ -19,6 +19,7 @@ global SocialGroups
 SocialGroups = {}
 
 
+
 def DetSGArrayWinners(counter):
     """
      Find winning recipies for a generation determined by 'counter'
@@ -78,6 +79,7 @@ class Generation(object):
     # List holding the Recipies that got the highest score in each social
     # group and were passed on
 
+  #  WinningArrsOverGenerations = {}
     winGenRecArr = []
 
 
@@ -99,9 +101,11 @@ class Generation(object):
         # maximum size of social group
         self.maxSocSize = P.maxSocSize
 
+        # ReviewMe: only need to run the simulation till there are now differing recipes left
+        self.goOn = True
 
-
-        while self.countGenUp < self.counterGen:
+        # <editor-fold desc=" Main While Loop - Running Through the Generations">
+        while self.countGenUp < self.counterGen and self.goOn:
 
             # ===================================
             #           MAIN 'IF' BRANCH
@@ -110,7 +114,7 @@ class Generation(object):
 
 
             if self.countGenUp == 0:
-
+                # <editor-fold desc=" 1st GENERATION ">
                 # ====================================
                 #
                 #           FIRST GENERATION
@@ -252,10 +256,10 @@ class Generation(object):
                 self.winGenRecArr = DetSGArrayWinners(self.countGenUp)
 
                 WinningArrsOverGenerations[self.countGenUp] = self.winGenRecArr
-               # print self.winGenRecArr.__len__()
-
+                # print self.winGenRecArr.__len__()
+                # </editor-fold>
             elif self.countGenUp > 0:
-
+                # <editor-fold desc=" FOLLOWING GENERATIONS ">
                 # ============================================
                 #
                 #           HIGHER ORDER GENERATIONS
@@ -381,14 +385,19 @@ class Generation(object):
 
                 WinningArrsOverGenerations[self.countGenUp] = self.winGenRecArr
                 # print self.winGenRecArr.__len__()
-
-
-
-
-
+                # </editor-fold>
 
             # AmDone: make sure this is working as it is supposed to!
             self.countGenUp += 1
+
+            recSet = set()
+            for rec in RecListOverGenerations[self.countGenUp-1]:
+                recSet.add(rec.title)
+
+            if recSet.__len__() == 1:
+                self.goOn = False
+        # </editor-fold>
+
 
 
 

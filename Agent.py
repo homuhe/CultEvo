@@ -17,6 +17,8 @@ import random
 import sys
 import itertools    # for permutations on our agent array
 import Generation
+import copy
+from copy import deepcopy
 
 import Recipe as REx
 
@@ -35,7 +37,7 @@ class Agent(object):
 
     recipies = []
 
-    #ancestors = []
+
 
     def setIDA(self):
         """
@@ -72,7 +74,7 @@ class Agent(object):
         self.sgID = None
 
         # start with empty list of recipies for each Agent, ReviewMe self.recipies = [] should be correct
-        del self.recipies[:]
+        self.recipies = []
 
         # List of IDs of ancestor agents, in order (oldest at [0] - direct parent at [__len__()-1]),
         self.ancestors = []
@@ -105,13 +107,16 @@ class Agent(object):
             if self.ancestors.__len__() > 0:
 
                 # every agent should get the recipe assigned that was the winner in his parents social group
-                # the parent ID is:     self.ancestors[self.ancestors.__len__()-1]] FixMe: ne ist der UR-Ahn, muss anders rum
+                # the parent ID is:     self.ancestors[self.ancestors.__len__()-1]]
                 # the Agent instance for that ID can be found (in constant time) under:
                 #                       Generation.agentsOverGenerations[self.ancestors[self.ancestors.__len__()-1]]
 
+                # ReviewMe: copying of Recipes as DEEPCOPYs, otherwise we will constantly add to the same object instance, not individual ones
                 index_gen = Generation.agentsOverGenerations[self.ancestors[self.ancestors.__len__()-1]].sgID[0]
                 index_socLst = Generation.agentsOverGenerations[self.ancestors[self.ancestors.__len__()-1]].sgID[1]
-                self.recipies.append(Generation.WinningArrsOverGenerations[index_gen][index_socLst])
+                self.recipies.append(copy.deepcopy(Generation.WinningArrsOverGenerations[index_gen][index_socLst]))
+                # ReviewMe: accumulate or not? FixMe
+                self.recipies[0].score = 0
 
             else:
                 if self.preference == "meat":
@@ -122,7 +127,7 @@ class Agent(object):
                     self.thelist = REx.recipesVeggi
 
                 # only use the main preference to randomly pick recipe
-                self.recipies = random.sample(self.thelist,1)
+                self.recipies = random.sample(copy.deepcopy(self.thelist),1)
                 # determine what time is acceptable for this Agent
                 self.timePref = self.recipies[0].prep_time
 
@@ -179,14 +184,55 @@ class Agent(object):
         # ingreds (not necessarily a bad thing), but we have to adjust the time too
         # by using margins as discussed, e.g., fast - medium - long and respective points
 
-            if not type(agentOb) is Agent:
-                sys.exit("Agent.judgeMyRec() - object not of type Agent")
-            else:
-                if self.getPref() == agentOb.getPref(): self.retRec().score += 1
-                if self.timePref == agentOb.retRec().prep_time: self.retRec().score += 1
-                for i in agentOb.retRec().ingredients:
-                    if i in  self.retRec().ingredients: self.retRec().score += 1
-                # FixMe: Range for number of ingreds
+        self.judgeSc = 0
+
+        if not type(agentOb) is Agent:
+            sys.exit("Agent.judgeMyRec() - object not of type Agent")
+        else:
+            #print()
+            #print("Agent: " + str(agentOb.retIDA()))
+            if self.getPref() == agentOb.getPref():
+                self.retRec().score += 1
+                self.judgeSc += 1
+            if self.timePref == agentOb.retRec().prep_time:
+                self.retRec().score += 1
+                self.judgeSc += 1
+            for i in agentOb.retRec().ingredients:
+                if i in  self.retRec().ingredients:
+                    self.retRec().score += 1
+                    self.judgeSc += 1
+
+        #print "Judge{:3} gave {:4} points for {}".format(agentOb.retIDA(),self.judgeSc,self.retRec().title)
+        # FixMe: Range for number of ingreds
+
+    # <editor-fold desc=" judgeMyRec(self.agentOb) tmps to compare different rule sets
+    def judgeMyRec_TMP_01(self,agentOb):
+
+        # ReviewMe: Balancing of the points assigned to the individual Recipe score
+        # if each ingred gets one point we have a bias for recipies with many
+        # ingreds (not necessarily a bad thing), but we have to adjust the time too
+        # by using margins as discussed, e.g., fast - medium - long and respective points
+
+        self.judgeSc = 0
+
+        if not type(agentOb) is Agent:
+            sys.exit("Agent.judgeMyRec() - object not of type Agent")
+        else:
+            #print()
+            #print("Agent: " + str(agentOb.retIDA()))
+            if self.getPref() == agentOb.getPref():
+                self.retRec().score += 1
+                self.judgeSc += 1
+            if self.timePref == agentOb.retRec().prep_time:
+                self.retRec().score += 1
+                self.judgeSc += 1
+            for i in agentOb.retRec().ingredients:
+                if i in  self.retRec().ingredients:
+                    self.retRec().score += 1
+                    self.judgeSc += 1
+
+        #print "Judge{:3} gave {:4} points for {}".format(agentOb.retIDA(),self.judgeSc,self.retRec().title)
+        # FixMe: Range for number of ingreds
 
     def setSocGrp(self,genCounter,sgID):
         """
