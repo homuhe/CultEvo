@@ -45,6 +45,13 @@ recDic = {"short":5,"medium":10}            # more than 10 elements implicates a
 
 parameter = []
 
+fields = "Number of Generations:", "Number of Agents:","Number of Simulations:",\
+         "Meat Agents %:", "Fish Agents %:", "Veggi Agents %:",\
+         "Mutate:"
+defaults = 15, 60, 3,\
+           20, 20, 20,\
+           "True"
+
 class StartWindow(Frame):                          
     def __init__(self, parent=None):           
         Frame.__init__(self, parent)
@@ -55,13 +62,6 @@ class StartWindow(Frame):
     def start(self):
         answer = askokcancel('', "Values set and ready to run?")
         if answer: Frame.quit(self)
-
-fields = "Number of Generations:", "Number of Agents:","Number of Simulations:",\
-		 "Meat Agents %:", "Fish Agents %:", "Veggi Agents %:",\
-		 "Mutate:"
-defaults = 15, 60, 3,\
-		   20, 20, 20,\
-		   "True"
 
 def run(input):
     global parameter
@@ -75,7 +75,7 @@ def run(input):
     do_mutate       = bool(parameter[6])
     print(parameter)
 
-def makeform(root, fields):
+def create(root, fields):
     form = Frame(root)                              
     left = Frame(form)
     right = Frame(form)
@@ -104,7 +104,7 @@ root = Tk()
 root.title("CultEvo 0.5")
 root.geometry("500x300")
 
-vars = makeform(root, fields)
+vars = create(root, fields)
 Button(root, text='Update Values', command=(lambda v=vars: run(v))).pack(side=LEFT)
 
 StartWindow(root).pack(side=RIGHT)
@@ -120,7 +120,6 @@ if len(parameter) != 0:
     facVeggi        = int(parameter[5])
     do_mutate       = bool(parameter[6])
 else:
-    print("CultEvo is closed.")
-    sys.exit()
+    sys.exit("CultEvo is closed.")
 
 
