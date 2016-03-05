@@ -12,7 +12,7 @@ Categories    : Beef
        2     teaspoons  chili powder
      3/4      teaspoon  dried oregano leaves -- crushed
      1/2      teaspoon  ground cumin
-                        Salt and pepper as desired
+                        Salt and pepper
        1  (20 ounce) b  frozen whole kernel corn -- defrosted
        1         small  onion -- quartered
        2          cups  milk
@@ -62,7 +62,7 @@ Serving Size  : 8     Preparation Time : 0:25
 Categories    : Beef                             The Texas Beef Council           
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
-       1         pound  ground beef, lean
+       1         pound  ground beef
        1    tablespoon  chili powder
      1/4      teaspoon  ground cumin
      1/4      teaspoon  salt
@@ -99,13 +99,13 @@ Nutr. Assoc. : 0
                      Augusta's Meat Balls & Gravy
 
 Recipe By     : 
-Serving Size  : 1     Preparation Time : 0:00
+Serving Size  : 1     Preparation Time : 2:15
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
        2        pounds  ground beef
                         salt and pepper
-     1/2           cup  all-purpose flour
+     1/2           cup  flour
        1                onion -- chopped
 
 Mix real good and make into meat balls.  brown in shortening on all sides. put in baking dish and pour gray over meat balls.
@@ -138,12 +138,12 @@ Nutr. Assoc. : 0
                      Bacon-Wrapped Steak Burgers
 
 Recipe By     : Possum Kingdom Lake Cookbook
-Serving Size  : 4     Preparation Time : 0:00
+Serving Size  : 4     Preparation Time : 0:20
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
-       4      8 Ounces  ground steak burgers
-       4                Stripes       bacon
+       4      8 Ounces  ground beef
+       4                bacon
        5         Large  mushrooms -- sliced
        3   Tablespoons  butter -- melted
        1       Package  brown gravy mix
@@ -379,7 +379,7 @@ Nutr. Assoc. : 0
                      Cold Corned Beef for St. Patrick's Day
 
 Recipe By     : The Kitchen Cabinet
-Serving Size  : 8     Preparation Time : 0:00
+Serving Size  : 8     Preparation Time : 3:30
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
@@ -392,7 +392,6 @@ Categories    :
        2        sticks  cinnamon -- 3 inches long
        5                cloves
        1                orange -- unpeeled,
-                        -- thinly sliced
 
 Place corned beef in a 6 to 8 quart pan; add 2 quarts water.  Cover and bring to a boil over high heat, then reduce heat and simmer for 30 minutes.  Taste water; if it's too salty, drain beef, discard water, and add 2 quarts more water to pan.
 
@@ -432,7 +431,7 @@ Serving Size  : 4     Preparation Time : 0:10
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
-     3/4           cup  thinly sliced onions
+     3/4           cup  onions
        3   tablespoons  butter
    1 1/2          cups  instant rice
        2          cans  chili -- all beef no beans
@@ -474,7 +473,6 @@ Categories    :
        1         pound  ground beef -- or more to taste
        6        ounces  tomato paste
        1         large  canned tomatoes
-       1         small  canned tomatoes
        1      teaspoon  salt
        2     teaspoons  sugar
        3         whole  cloves
@@ -541,7 +539,7 @@ Nutr. Assoc. : 0
                      Hot And Spicy Beef Spareribs
 
 Recipe By     : 
-Serving Size  : 1     Preparation Time : 0:00
+Serving Size  : 1     Preparation Time : 0:30
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
@@ -584,7 +582,7 @@ Nutr. Assoc. : 0
                      Hamburger Fingerlings
 
 Recipe By     : 
-Serving Size  : 4     Preparation Time : 0:00
+Serving Size  : 4     Preparation Time : 1:00
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
@@ -652,7 +650,7 @@ Categories    :
        1         pound  ground beef
        1                onion -- diced
       15         ounce  tomato sauce
-       1       package  mozzarella cheese slices
+       1       package  mozzarella cheese
 
 Remove center of bread to make a boat shape. Brown ground beef; add sauce, mushrooms and onion. Simmer 2-3 minutes. Pour into bread and top with slices of cheese. Heat on baking sheet at 350: for 10-15 minutes or until the cheese melts. Slice to serve. Serves 5-6.
 
@@ -765,7 +763,7 @@ Nutr. Assoc. : 0
                      Korean Barbecue Beef
 
 Recipe By     : Barbara Price
-Serving Size  : 4     Preparation Time : 0:00
+Serving Size  : 4     Preparation Time : 3:00
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
@@ -883,7 +881,7 @@ Nutr. Assoc. : 0
                      Impossible Taco
 
 Recipe By     : 
-Serving Size  : 6     Preparation Time : 0:00
+Serving Size  : 6     Preparation Time : 0:30
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
@@ -892,7 +890,7 @@ Categories    :
        1      envelope  taco seasoning mix
        1           can  chopped green chilies -- drained
    1 1/4          cups  milk
-     3/4           cup  Bisquick. baking mix
+     3/4           cup  Bisquick baking mix
        3                eggs
        2                tomatoes -- sliced
        1           cup  Monterey jack cheese -- shredded
@@ -943,7 +941,7 @@ Nutr. Assoc. : 0
                      Venetian Liver with Polenta
 
 Recipe By     : 
-Serving Size  : 1     Preparation Time : 0:00
+Serving Size  : 1     Preparation Time : 0:30
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
@@ -956,7 +954,7 @@ Categories    :
        1         pound  onions -- sliced thin
      1/2      teaspoon  sage leaves
      1/4           cup  dry white wine
-       1    tablespoon  chopped parsley
+       1    tablespoon  parsley
                         Polenta -- see recipe
 
 With paper towels pat liver dry.  Cut into strips 1/8 inch wide.  (To make liver easier to slice thinly, place in freezer just long enough to chill thoroughly) on sheet of waxed paper, combine flour, salt and pepper. roll liver in mixture, coating well.
@@ -984,7 +982,7 @@ Nutr. Assoc. : 0
                      Veal Parmigiano
 
 Recipe By     : Flora DiPillo
-Serving Size  : 4     Preparation Time : 0:00
+Serving Size  : 4     Preparation Time : 1:00
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
@@ -1023,7 +1021,7 @@ Nutr. Assoc. : 0
                      Veal In Cream
 
 Recipe By     : 
-Serving Size  : 4     Preparation Time : 0:00
+Serving Size  : 4     Preparation Time : 0:25
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
@@ -1031,7 +1029,6 @@ Categories    :
        1         Clove  Garlic -- minced
        6   Tablespoons  Butter
        4        Slices  Veal -- pounded & cut
-                        -- in thin strips
                         Salt And Pepper -- to taste
        1           Cup  Cream
      1/2         Pound  Mushrooms -- sliced
@@ -1170,14 +1167,14 @@ Nutr. Assoc. : 0
                      Tenderloin Tips In Beer
 
 Recipe By     : 
-Serving Size  : 4     Preparation Time : 0:00
+Serving Size  : 4     Preparation Time : 1:30
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
        2        pounds  tenderloin tips
                         Salt and pepper -- to taste
      1/2           cup  flour
-                        Oil for sauting
+                        Oil
        1         large  onion -- sliced
        1                Leek -- white only, chopped
        1                Shallot -- finely chopped
@@ -1317,7 +1314,7 @@ Nutr. Assoc. : 0
                      Sweet And Sour Meatballs 57
 
 Recipe By     : 
-Serving Size  : 4     Preparation Time : 0:00
+Serving Size  : 4     Preparation Time : 0:30
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
@@ -1330,7 +1327,7 @@ Categories    :
        1                Onion -- sliced
    1 1/2          cups  pineapple juice
      1/4           cup  Heinz 57 Sauce
-                        Cornstarch/water
+                        water
 
 Combine ground beef, egg, salt and pepper.
 
@@ -1370,18 +1367,18 @@ Nutr. Assoc. : 0
                      Sweet & Sour Meatballs
 
 Recipe By     : Martha Jo Williams
-Serving Size  : 1     Preparation Time : 0:00
+Serving Size  : 1     Preparation Time : 0:30
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
        1         pound  ground chuck
        1                Egg -- beaten
-                        Salt & pepper
+                        Salt and pepper
        1   small   jar  apple jelly
        1           jar  chili sauce -- may add to beef
                         Garlic salt
                         Worcestershire sauce
-                        Catsup
+                        Ketchup
                         Cracker crumbs
                         Flour
                         Onion
@@ -1416,20 +1413,17 @@ Categories    :
 --------  ------------  --------------------------------
                         ***MEAT BALLS***
        2   tablespoons  butter or margarine -- melted
-     1/4           cup  finely minced onion
+     1/4           cup  onion
        1                Egg -- slightly beaten
      1/2           cup  milk
-     1/2           cup  soft -- fine bread crumbs
+     1/2           cup  bread crumbs
    1 1/2     teaspoons  salt
-     1/2      teaspoon  allspice
      1/4      teaspoon  nutmeg
        1         pound  lean ground beef
-     1/4         pound  ground veal -- or pork
-                        SAUCE:
+     1/4         pound  ground veal
        2   tablespoons  butter or margarine
        3   tablespoons  flour
        1      teaspoon  sugar
-       1      teaspoon  salt
      1/4      teaspoon  black pepper
        1           cup  water
      3/4           cup  light cream -- or evaporated milk
@@ -1480,19 +1474,18 @@ Nutr. Assoc. : 0
                      Stew-Da-Loo
 
 Recipe By     : 
-Serving Size  : 8     Preparation Time : 0:00
+Serving Size  : 8     Preparation Time : 1:30
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
-       2        pounds  cubed lean beef for stew
+       2        pounds  lean beef
        2   tablespoons  shortening
    3 1/2          cups  water
        1        medium  onion -- sliced
        1    tablespoon  Heinz Worcestershire Sauce
      1/4      teaspoon  pepper
        6        medium  potatoes -- cubed
-       4        medium  carrots -- cut into 1/4"
-                        -- slices
+       4        medium  carrots
        2        medium  onions -- cut into eighths
        1           cup  Heinz Tomato Ketchup
      1/2           cup  dry red wine
@@ -1540,12 +1533,11 @@ Nutr. Assoc. : 0
                      Steak Strips
 
 Recipe By     : 
-Serving Size  : 1     Preparation Time : 0:00
+Serving Size  : 1     Preparation Time : 0:25
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
-       1         pound  top sirloin steaks -- sliced into thin
-                        -- strips
+       1         pound  steaks
        1           can  tomatoes -- diced (10 oz.)
        1           cup  carrots -- thinly sliced
      1/2           cup  onion -- finely chopped
@@ -1593,16 +1585,16 @@ Nutr. Assoc. : 0
                      Steak Mandarin
 
 Recipe By     : 
-Serving Size  : 4     Preparation Time : 0:00
+Serving Size  : 4     Preparation Time : 0:25
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
-     3/4         pound  flank steak
+     3/4         pound  steak
        1    tablespoon  dry sherry
        3   tablespoons  soy sauce
        1    tablespoon  cornstarch
-       1                sweet green pepper, whole
-   8 1/2        ounces  waterchestnuts, canned -- drained
+       1                green pepper
+   8 1/2        ounces  waterchestnuts
        3   tablespoons  vegetable oil
       16        ounces  bean sprouts -- canned, drained
      1/2      teaspoon  salt
@@ -1634,15 +1626,13 @@ Nutr. Assoc. : 0
                      Steak Diane
 
 Recipe By     : 
-Serving Size  : 2     Preparation Time : 0:00
+Serving Size  : 2     Preparation Time : 0:20
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
-       2                Filet Mignons -- or other type of
-                        -- steak of your
-                        -- choice
+       2                Filet Mignons
      1/8      teaspoon  salt
-     1/8      teaspoon  freshly ground pepper
+     1/8      teaspoon  ground pepper
        2   tablespoons  butter
        1      teaspoon  Dijon style mustard
        1    tablespoon  shallots -- minced
@@ -1652,7 +1642,7 @@ Categories    :
        1    tablespoon  fresh chives -- minced
        1      teaspoon  brandy
        1    tablespoon  fresh parsley -- minced
-                        Salt & pepper to taste
+                        Salt and pepper
 
  Season both sides of steaks with salt and pepper.
 
@@ -1688,7 +1678,7 @@ Nutr. Assoc. : 0
                      Steak
 
 Recipe By     : 
-Serving Size  : 1     Preparation Time : 0:00
+Serving Size  : 1     Preparation Time : 1:30
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
@@ -1723,24 +1713,24 @@ Nutr. Assoc. : 0
                      Spaghetti Pie
 
 Recipe By     : Meredith Corporation, 1980
-Serving Size  : 6     Preparation Time : 0:00
+Serving Size  : 6     Preparation Time : 0:35
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
        6        ounces  spaghetti
        2   tablespoons  butter or margarine
-     1/3           cup  grated parmesan cheese
+     1/3           cup  parmesan cheese
        2                eggs -- well beaten
        1           cup  cottage cheese
        1         pound  ground beef
-     1/2           cup  chopped onion
-     1/4           cup  chopped green bell pepper
+     1/2           cup  onion
+     1/4           cup  green pepper
        1           cup  tomatoes -- cut up
        6        ounces  tomato paste
        1      teaspoon  sugar
-       1      teaspoon  dried oregano -- crushed
+       1      teaspoon  oregano -- crushed
      1/2      teaspoon  garlic salt
-     1/2           cup  shredded mozzarella cheese
+     1/2           cup  mozzarella cheese
 
 Cook the spaghetti according to package directions; drain (should have about 3 cups spaghetti).  Stir butter into hot spaghetti.  Stir in parmesan cheese and eggs.  Form spaghetti mixture into a crust in a buttered 10-inch pie plate.  spread cottage cheese over bottom of spaghetti crust.
 
@@ -1872,9 +1862,9 @@ Categories    :
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
        1         pound  ground beef
-       1    tablespoon  cooking oil
-     1/2           cup  chopped onion
-       2   tablespoons  chopped sweet green pepper
+       1    tablespoon  oil
+     1/2           cup  onion
+       2   tablespoons  green pepper
        2          cups  tomato sauce
    1 1/4     teaspoons  salt
        8                Hamburger buns
@@ -2047,20 +2037,18 @@ Nutr. Assoc. : 0
                      Savory Pot Roast
 
 Recipe By     : 
-Serving Size  : 8     Preparation Time : 0:00
+Serving Size  : 8     Preparation Time : 3:00
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
        2   tablespoons  vegetable oil
-   3 1/2        pounds  beef round -- or chuck pot roast,
-                        -- up to 4
+   3 1/2        pounds  beef
        1           can  cream of mushroom soup -- (10 3/4 oz.)
-       1         Pouch  Campbell's Dry Onion Soup and
-                        -- Recipe Mix
+       1         Pouch  Campbell's Dry Onion Soup
    1 1/4          cups  water
        6        medium  potatoes -- quartered
        6                Carrots -- cut into 2" pieces
-       2   tablespoons  all-purpose flour
+       2   tablespoons  flour
 
  In 6 quart saucepot, in hot oil, brown roast on all sides.  Spoon off fat.
 
@@ -2111,7 +2099,7 @@ Categories    :
        1         large  onion -- chopped
        1           can  whole potatoes -- drained (reserve
                         -- liquid) (16 oz.)
-     1/4           cup  catsup
+     1/4           cup  Ketchup
        1    tablespoon  Worcestershire sauce
        2     teaspoons  bell pepper flakes
        1      teaspoon  instant beef bouillon
@@ -2123,7 +2111,7 @@ Categories    :
 
  Coat beef steak pieces with flour; pound into beef.  Brown beef in oil in 10" skillet; push beef to side.  Cook and stir onion in oil until tender; drain.
 
- Add enough water to reserved potato liquid to measure 1 cup.  Mix potato liquid, catsup, Worcestershire sauce, pepper flakes, instant bouillon, salt, marjoram and pepper; pour on beef and onion.  Heat to boiling; reduce heat.  Cover and simmer until beef is tender, 1 1/4 to 1 1/2 hours.
+ Add enough water to reserved potato liquid to measure 1 cup.  Mix potato liquid, Ketchup, Worcestershire sauce, pepper flakes, instant bouillon, salt, marjoram and pepper; pour on beef and onion.  Heat to boiling; reduce heat.  Cover and simmer until beef is tender, 1 1/4 to 1 1/2 hours.
 
  Rinse frozen beans under running cold water to separate.  Add potatoes, beans and pimiento to skillet.  Heat to boiling; reduce heat.  Cover and simmer until beans are tender, 10 to 15 minutes.
 
@@ -2151,20 +2139,19 @@ Nutr. Assoc. : 0
                      Quick Skillet Beef and Vegetables
 
 Recipe By     : Naomi Billings
-Serving Size  : 2     Preparation Time : 0:00
+Serving Size  : 2     Preparation Time : 0:10
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
        1         large  onion -- sliced
        4         large  mushrooms -- sliced
-     1/2         pound  lean beef -- thinly sliced
+     1/2         pound  beef -- thinly sliced
        3   tablespoons  cooking oil
        4   tablespoons  soy sauce
        2   tablespoons  sugar
      1/4         pound  fresh spinach
        3        pieces  celery -- sliced thin diagonal
-       4                scallions -- cut lengthwise into
-                        -- thin slices
+       4                scallions
      1/2           can  consomme
 
 Place in skillet 3 tablespoons cooking oil and the sliced onion.  Mix in sliced mushrooms.  Add beef, spinach, celery, scallions and soy sauce.  Sprinkle with sugar.  Add half of a 10 1/2 ounce can consomme. Mix.  Cook 2 minutes.  Serve over rice.  Serve 2
@@ -2194,13 +2181,11 @@ Categories    :
 --------  ------------  --------------------------------
        1         pound  ground beef
        1        medium  onion -- chopped
-       1       package  Hamburger Helper mix for Lasagna
        5          cups  water
        1           can  whole kernel corn -- (8 1/4 oz.)
-       1           can  whole tomatoes -- (16 oz.)
-       2   tablespoons  grated Parmesan cheese
-       1         small  zucchini -- sliced and slices
-                        -- cut into halves
+       1           can  tomatoes -- (16 oz.)
+       2   tablespoons  Parmesan cheese
+       1         small  zucchini
 
 Cook and stir ground beef and onion in Dutch oven until beef is brown; drain.
 
@@ -2242,7 +2227,7 @@ Nutr. Assoc. : 0
                      Picante Burgers
 
 Recipe By     : Frito-Lays, Inc. 1984
-Serving Size  : 1     Preparation Time : 0:00
+Serving Size  : 1     Preparation Time : 0:20
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
@@ -2270,7 +2255,7 @@ Nutr. Assoc. : 0
                      Oriental Pepper Steak
 
 Recipe By     : 
-Serving Size  : 4     Preparation Time : 0:00
+Serving Size  : 4     Preparation Time : 0:25
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
@@ -2669,7 +2654,6 @@ Categories    :
        2   tablespoons  shortening
        2          cups  cooked beef -- cubed
        2   tablespoons  chopped sweet pickled
-       1             #  --
 
 
 
@@ -2787,15 +2771,13 @@ Nutr. Assoc. : 0
                      Impossible Cheeseburger Pie 2
 
 Recipe By     : Adapted from Bisquick Family Favorites
-Serving Size  : 8     Preparation Time : 0:10
+Serving Size  : 8     Preparation Time : 0:40
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
-                        --Crust--
    1 1/2          cups  skim milk
      3/4           cup  low-fat baking mix
        2         whole  egg whites
-                        --Filling--
      1/2      teaspoon  olive oil
        1         pound  ground chicken breast -- skinless, cooked
      1/2           cup  onions -- chopped
@@ -2988,11 +2970,11 @@ Nutr. Assoc. : 0
                      Hot Diggity Barbecued Franks
 
 Recipe By     : 
-Serving Size  : 1     Preparation Time : 0:00
+Serving Size  : 1     Preparation Time : 0:55
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
-       1           cup  catsup
+       1           cup  Ketchup
        1           cup  water
        1         small  onion -- chopped
        1    tablespoon  Worcestershire sauce
@@ -3005,7 +2987,7 @@ Categories    :
        2        pounds  frankfurters
                         Toasted hot dog rolls
 
- Mix catsup, water, onion, worcestershire sauce, vinegar, brown sugar, dry mustard, paprika, chili powder, garlic and seasoned salt.  Let simmer slowly at side of grill in covered pan and 1/2 hour before using.
+ Mix Ketchup, water, onion, worcestershire sauce, vinegar, brown sugar, dry mustard, paprika, chili powder, garlic and seasoned salt.  Let simmer slowly at side of grill in covered pan and 1/2 hour before using.
 
  Dip frankfurters into sauce and grill about 4 inches from hot coals 10 minutes or until nicely browned.
 
@@ -3167,19 +3149,16 @@ Nutr. Assoc. : 0
                      Corned Beef Hawaiian
 
 Recipe By     : 
-Serving Size  : 6     Preparation Time : 0:00
+Serving Size  : 6     Preparation Time : 0:45
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
-       1           can  corned beef -- cut into 6 slices
-                        -- (12 oz.)
-     1/2           cup  packed brown sugar
+       1           can  corned beef
+     1/2           cup  brown sugar
      1/4           cup  Bisquick baking mix
        2   tablespoons  soy sauce
-       1           can  pineapple chunks -- drained (reserved
-                        -- syrup) (20 oz.)
-       8                Green onions -- with tops, cut into
-                        -- 1" pieces
+       1           can  pineapple chunks
+       8                Green onions
        1                Green pepper -- cut into 1" pieces
        1         clove  garlic -- crushed
 
@@ -3618,7 +3597,7 @@ Categories    :
        1           Can  Sliced Mushrooms -- drained
        2          Cans  Beef Broth
      1/3           Cup  Minced Onions
-     1/4           Cup  Catsup
+     1/4           Cup  Ketchup
    1 1/2     Teaspoons  Garlic Salt
      1/3           Cup  Flour
        2          Cups  Sour Cream
@@ -3631,7 +3610,7 @@ Melt 1/4 cup butter in large skillet.  Cook and stir mushrooms in butter about 5
 
 In same skillet, brown meat.
 
-Reserving 2/3 cup of the broth, stir in remaining broth, the onion, catsup and garlic salt.  Cover and simmer 15 minutes.
+Reserving 2/3 cup of the broth, stir in remaining broth, the onion, Ketchup and garlic salt.  Cover and simmer 15 minutes.
 
 Blend reserved broth and the flour; stir into  meat.  Add mushrooms; heat to boiling, stirring constantly.  Boil and stir 1 minute.  Stir in sour cream; heat through.
 
@@ -4251,7 +4230,7 @@ Categories    :
        1    tablespoon  minced onion
    1 1/2   tablespoons  A-1 sauce
        1      teaspoon  worcestershire sauce
-     2/3           cup  catsup
+     2/3           cup  Ketchup
        1          dash  pepper
      1/4      teaspoon  salt
        3   tablespoons  sherry
@@ -4484,7 +4463,7 @@ Categories    : Soup
        2  (14 ounce) c  beef broth
        2          cups  frozen corn kernels
        1           cup  prepared salsa
-       1  (16 ounce) p  heat-and-serve frozen beef meatballs
+       1  (16 ounce) p  frozen beef meatballs
                         Tortilla chips
                         Chopped cilantro
 
@@ -4523,7 +4502,7 @@ Serving Size  : 6     Preparation Time : 0:20
 Categories    : Beef                             
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
-       6                (6-8 ounces each) sirloin strip steaks
+       6                sirloin steaks
        4   tablespoons  cracked peppercorn mix -- black green and pink
                         Kosher salt
        1    tablespoon  olive oil
@@ -4570,7 +4549,7 @@ Categories    : Beef
        4                main course
        1         pound  beef top sirloin steak
        6                green onions -- cut into 1 1/2-inch
-     1/4           cup  packed brown sugar
+     1/4           cup  brown sugar
        3   tablespoons  dry sherry
        3   tablespoons  soy sauce
        2     teaspoons  dark sesame oil
@@ -4619,7 +4598,7 @@ Nutr. Assoc. : 0
                      Red-Cooked Pot Roast (Shanghai Pot Roast)
 
 Recipe By     : 
-Serving Size  : 12    Preparation Time : 0:00
+Serving Size  : 12    Preparation Time : 3:00
 Categories    : Beef                             Chinese                          
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
@@ -4667,11 +4646,11 @@ Serving Size  : 8     Preparation Time : 0:30
 Categories    : Beef                             
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
-       1         pound  (4 1/2 to 5) beef brisket
+       1         pound  beef brisket
        5  large cloves  garlic -- sliced
        1  (12 ounce) cup  beer
        1  (18 ounce) bottle  Kraft BULL'S-EYE Orig. or favorite Barbecue Sauce
-       1  (4 ounce) can  chopped green chilies -- drained
+       1  (4 ounce) can  green chilies -- drained
 
 With a small knife, pierce top and sides of brisket 1 inch deep every 2 inches. Insert garlic slice in each cut.
 
@@ -4836,15 +4815,15 @@ Serving Size  : 4     Preparation Time : 0:10
 Categories    : Beef                             
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
-       4                (6-ounce) beef rib eye steaks -- cut 1-inch thick
+       4                beef rib eye steaks -- cut 1-inch thick
        3   tablespoons  Cajun spice mix
        1    tablespoon  olive oil
-       2   tablespoons  fresh oregano -- chopped fine
-       1    tablespoon  fresh thyme -- chopped fine
-       1    tablespoon  fresh rosemary -- chopped fine
+       2   tablespoons  oregano -- chopped fine
+       1    tablespoon  thyme -- chopped fine
+       1    tablespoon  rosemary -- chopped fine
        1      teaspoon  garlic -- minced
        1           cup  Burgundy wine
-                        Salt and pepper to taste
+                        Salt and pepper
 
 Rub steaks on both sides with Cajun spice mix, adding salt and pepper to taste.
 
@@ -5071,11 +5050,11 @@ Categories    : Main Course
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
        1         pound  ground beef
-       1         small  green or red bell pepper -- cut into thin strips
+       1         small  red bell pepper -- cut into thin strips
        1         small  onion -- thinly sliced, separ
      3/4      teaspoon  salt
      1/2      teaspoon  pepper
-       1         large  (16 ounces) prepared baked pizza crust (ap
+       1         large  prepared baked pizza crust (ap
        2          cups  shredded low-moisture part-skim Mozzarella
 
 Preheat oven to 400F.
@@ -5113,16 +5092,16 @@ Nutr. Assoc. : 0
                      Chilli Plum Beef
 
 Recipe By     : 
-Serving Size  : 0     Preparation Time : 0:00
+Serving Size  : 0     Preparation Time : 1:00
 Categories    : Beef                             Chinese                          
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
-     750         grams  Beef eye fillet (in one piece)
+     750         grams  Beef eye fillet
        1  150 ml bottl  plum sauce
        1    tablespoon  Dark soya sauce
        1         Clove  garlic
-       1      teaspoon  Grated fresh ginger
-     1/2      teaspoon  Chopped fresh red chilli
+       1      teaspoon  ginger
+     1/2      teaspoon  red chilli
        2     teaspoons  Sugar
        2     teaspoons  Dry sherry
        2     teaspoons  Cornflour

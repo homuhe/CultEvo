@@ -3,7 +3,7 @@
                      Barbecue Pork Loin Roast
 
 Recipe By     : Possum Kingdom Lake Cookbook
-Serving Size  : 6     Preparation Time : 0:00
+Serving Size  : 6     Preparation Time : 1:00
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
@@ -103,16 +103,12 @@ Serving Size  : 6     Preparation Time : 2:15
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
-       3        pounds  lean -- boneless pork loin
-                        -- roast
+       3        pounds  lean pork
        2          cups  chicken stock
      1/2           cup  soy sauce
        3   tablespoons  sherry wine (optional)
-     1/3           cup  fresh ginger -- thinly shredded or
-                        -- 1/2 tsp. dry
-                        -- powdered ginger
-       2        cloves  garlic -- crushed, or 1/2
-                        -- tsp. garlic puree
+     1/3           cup  ginger
+       2        cloves  garlic
        2   tablespoons  brown sugar
        3                fresh california bartlett pears -- sliced
        1           cup  green onions -- sliced
@@ -158,8 +154,8 @@ Serving Size  : 1     Preparation Time : 0:55
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
-       1                Boneless smoked fully cooked ham
-     1/2           cup  jellied cranberry sauce
+       1                ham
+     1/2           cup  cranberry sauce
      1/2           cup  orange marmalade
      1/4      teaspoon  ground cloves
      1/2      teaspoon  dry mustard
@@ -204,13 +200,13 @@ Categories    :
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
        1           cup  mayonnaise
-       2   tablespoons  chopped onion
-       1    tablespoon  prepared mustard
+       2   tablespoons  onion
+       1    tablespoon  mustard
        1    tablespoon  milk
-     1/4      teaspoon  dried dill weed
-       2          cups  cubed cooked ham
-       2          cups  peeled cubed cooked potatoes
-     1/4           cup  chopped dill pickles
+     1/4      teaspoon  dill
+       2          cups  ham
+       2          cups  potatoes
+     1/4           cup  dill
 
  In large bowl stir together mayonnaise, onion, mustard, milk and dill.
 
@@ -284,8 +280,7 @@ Categories    :
        1      teaspoon  soy sauce
        1      teaspoon  dark molasses
        1    tablespoon  cornstarch
-       1           cup  cooked pork -- sliced 1 1/2" long &
-                        -- 1/2" wide
+       1           cup  cooked pork
        1           cup  bean sprouts -- canned, drained
      1/4           cup  pimientos -- chopped
        1           cup  shredded lettuce
@@ -294,8 +289,8 @@ Categories    :
                         salad oil
        1      teaspoon  cider vinegar
   13 3/4        ounces  chicken broth
-     1/4           cup  slivered green pepper
-     1/4           cup  thinly sliced onions
+     1/4           cup  green pepper
+     1/4           cup  onions
 
  In small saucepan, combine soy sauce, molasses, vinegar and cornstarch, stirring until smooth.  Gradually stir in chicken broth; over direct heat, bring to boil, stirring.  Reduce heat and simmer 10 minutes.  Sauce with thicken and become translucent. Keep hot over hot water.
 
@@ -512,14 +507,12 @@ Categories    :
                         Flour
        4   tablespoons  butter
        2   tablespoons  oil
-                        Salt to taste
-       1      teaspoon  freshly ground pepper
+                        Salt
      1/2           cup  white wine
-       1         pound  mushrooms caps-little ones or large ones
-                        -- quartered
+       1         pound  mushrooms
        5   tablespoons  butter
        1      teaspoon  salt
-       1      teaspoon  freshly ground pepper
+       1      teaspoon  ground pepper
        1    tablespoon  Worcestershire sauce
        2   tablespoons  flour
      3/4           cup  heavy cream
@@ -561,15 +554,15 @@ Categories    :
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
        2                pork chops
-       1    tablespoon  all-purpose flour
+       1    tablespoon  flour
        1    tablespoon  vegetable oil
-   2 1/2   tablespoons  grated Parmesan cheese
+   2 1/2   tablespoons  Parmesan cheese
      1/4      teaspoon  salt
      1/8      teaspoon  pepper
        2          cups  potatoes -- thinly sliced
        1        medium  onion -- thinly sliced
        2                beef bouillon cubes
-     1/4           cup  hot water -- plus 2 tablespoons
+     1/4           cup  water -- plus 2 tablespoons
    1 1/2     teaspoons  lemon juice
 
 Dredge pork chops in flour; brown in hot oil in a medium skillet.  combine cheese, salt, and pepper; sprinkle 1 tablespoon cheese mixture over pork chops. Arrange potatoes over meat, sprinkle 1 tablespoon cheese over potatoes.  Arrange onion on top.
@@ -597,19 +590,18 @@ Nutr. Assoc. : 0
                      Polynesian Luau
 
 Recipe By     : 
-Serving Size  : 6     Preparation Time : 0:00
+Serving Size  : 6     Preparation Time : 0:45
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
        1           cup  French dressing
    1 1/2     teaspoons  blue cheese
-   1 1/2     teaspoons  chopped anchovies or anchovy paste
+   1 1/2     teaspoons  anchovies
       12        slices  white bread
                         Butter or margarine -- softened
-       6        slices  baked ham
-       6        slices  sweetened pineapple -- fresh or canned
-     3/4           cup  toasted -- salted coconut
-                        -- chips
+       6        slices  ham
+       6        slices  pineapple -- fresh or canned
+     3/4           cup  coconut chips
        3                Maraschino cherries -- halved
 
  Combine French dressing, blue cheese and anchovies.  Mix well.
@@ -654,7 +646,7 @@ Nutr. Assoc. : 0
                      Polish Sausage, Cabbage & Potatoes
 
 Recipe By     : 
-Serving Size  : 1     Preparation Time : 0:00
+Serving Size  : 1     Preparation Time : 0:50
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
@@ -662,7 +654,7 @@ Categories    :
      1/2         pound  Kielbasa -- sliced 1/4" thick
        1         small  cabbage -- shredded
        3                potatoes -- sliced 1/4" thick
-       1           cup  sliced onions
+       1           cup  onions
        2   tablespoons  flour
   10 3/4        ounces  chicken broth -- undiluted
        1    tablespoon  cider vinegar
@@ -705,13 +697,13 @@ Categories    :
 --------  ------------  --------------------------------
        4        pounds  spareribs -- up to 5
                         Soy sauce
-     3/4           cup  granulated sugar
+     3/4           cup  sugar
        2   tablespoons  cornstarch
        1           cup  cider vinegar
      1/2           cup  pineapple juice
        2   tablespoons  soy sauce
        1        medium  green pepper -- cut in strips
-     1/2           cup  drained pineapple chunks
+     1/2           cup  pineapple
 
  Ask the meat cutter to cut the slabs in half lengthwise.
 
@@ -760,10 +752,9 @@ Categories    :
        3   tablespoons  brown sugar
        1      teaspoon  vanilla extract
      1/2      teaspoon  ground nutmeg
-                        -------seasoning mix--------
        1    tablespoon  salt
        1      teaspoon  onion powder
-       1      teaspoon  ground cayenne pepper
+       1      teaspoon  cayenne pepper
      3/4      teaspoon  garlic powder
      1/2      teaspoon  white pepper
      1/2      teaspoon  dry mustard
@@ -771,16 +762,15 @@ Categories    :
      1/2      teaspoon  ground cumin
      1/2      teaspoon  black pepper
      1/2      teaspoon  dried thyme leaves
-                        ---pork chop ingredients----
        6  1 3/4" thick  pork chops
      3/4         pound  ground pork
-       1           cup  chopped onions
-       1           cup  chopped green bell peppers
-       2     teaspoons  minced garlic
-       1           cup  (4 oz) diced green chilies
+       1           cup  onions
+       1           cup  green bell peppers
+       2     teaspoons  garlic
+       1           cup  green chilies
        1           cup  chicken stock
-     1/2           cup  very fine bread crumbs
-     1/2           cup  finely chopped green onions
+     1/2           cup  bread crumbs
+     1/2           cup  green onions
 
 In a food processor or blender, process the apples, 4 Tablespoons of the butter, the sugar, vanilla and nutmeg until smooth, about 3 to 4 minutes.  Set aside.   In a small bowl thoroughly combine the seasoning mix ingredients; set aside.   Prepare the pork chops by cutting a large pocket (to the bone) into the larger side of each chop to hold the stuffing.   In a large skillet, brown the ground pork in the remaining 3 Tbsp. butter over high heat, about 3 minutes.  Add the onions, bell peppers, garlic, and 2 Tbsp. of the seasoning mix, stirring well; cook about 5 minutes, stirring occasionally and scraping pan bottom well.  Stir in the green chilies and their juice and continue cooking until mixture is well browned, about 6 to 8 minutes, stirring occasionally and scraping the pan bottom as needed. Add the stock and cook 5 minutes, stirring frequently.  Stir in the bread crumbs and cook about 2 minutes more, stirring constantly and scraping pan bottom as needed.  Remove from heat.   Sprinkle the remaining seasoning mix evenly on both sides of the chops and inside the pockets, pressing it in by hand.  Prop chops with pocket side up in an ungreased 13x9-inch baking pan.  Spoon about 1/4 cup stuffing into each pocket; reserve the remaining stuffing.  Bake chops with pocket up at 400F until the meat is done, about 1 hour 10 minutes. Place the remaining stuffing in a small pan in the oven for the last 20 minutes to reheat.   Serve immediately with each chop arranged on top of a portion of the remaining stuffing.
 
@@ -840,21 +830,17 @@ Serving Size  : 8     Preparation Time : 5:00
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
-   2 1/4        pounds  boneless pork shoulder butt -- smoked
+   2 1/4        pounds  pork shoulder
        4         whole  black peppercorns
        2         whole  cloves
        1                bay leaf
      1/2           cup  apricot preserves
-                        ***Butter Carrots***
-       4         large  carrots -- pared and cut on
-                        -- diagonal into 1/8"
-                        -- thick slices
+       4         large  carrots
      1/2      teaspoon  salt
        1    tablespoon  sugar
        2   tablespoons  butter or margarine
-                        ***Butter cabbage***
    2 1/4     teaspoons  salt
-       3        quarts  shredded cabbage
+       3        quarts  cabbage
      1/4           cup  butter
        1    tablespoon  cider vinegar
      1/4      teaspoon  pepper
@@ -888,18 +874,17 @@ Nutr. Assoc. : 0
                      Sausage And Cornbread Cabbage Rolls
 
 Recipe By     : 
-Serving Size  : 2     Preparation Time : 0:00
+Serving Size  : 2     Preparation Time : 0:45
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
        4         large  cabbage leaves
-       1         large  beaten egg
-       1           cup  apple chopped (1 med)
+       1         large  egg
+       1           cup  apple
      1/3           cup  cornbread stuffing mix
        2   tablespoons  apple juice or cider
      1/2         pound  bulk pork sausage
      1/4           cup  water
-     1/3           cup  apple juice or cider
        1      teaspoon  cornstarch
      1/2      teaspoon  instant beef bouillon
 
@@ -928,10 +913,9 @@ Serving Size  : 1     Preparation Time : 1:45
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
-       2          cups  cubed fully cooked ham
-       6        medium  potatoes -- thinly sliced, up
-                        -- to 8
-     1/4           cup  finely chopped onion
+       2          cups  ham
+       6        medium  potatoes
+     1/4           cup  onion
      1/3           cup  flour
        2          cups  milk
        3   tablespoons  bread crumbs
@@ -979,8 +963,7 @@ Categories    :
        7   tablespoons  flour
      1/2           cup  chopped onion
      1/2           cup  diced bell pepper
-       1           can  tomatoes -- pureed in blender
-                        -- (16 oz.)
+       1           can  tomatoes
        1           can  Spanish style tomato sauce -- (15 oz.)
      1/2           cup  water
    1 1/2     teaspoons  salt
@@ -990,8 +973,8 @@ Categories    :
      1/2      teaspoon  celery salt
        1    tablespoon  brown sugar
      1/4      teaspoon  hot red pepper sauce -- optional
-   1 1/2          cups  sliced fresh okra
-       2          cups  cubed cooked ham -- 1/2" cubes
+   1 1/2          cups  okra
+       2          cups  ham -- 1/2" cubes
 
  Melt shortening in large Dutch oven (5 qt.) over medium high heat.
 
@@ -1045,15 +1028,13 @@ Serving Size  : 4     Preparation Time : 0:50
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
-       3        pounds  spareribs -- cut in servings
-                        -- pieces, 2 ribs
-                        -- wide, up to 4
+       3        pounds  spareribs
        1           cup  soy sauce
      1/2           cup  pineapple juice
      1/4           cup  sherry
        1    tablespoon  brown sugar
        1  small  clove  garlic -- crushed
-     1/4      teaspoon  ground ginger
+     1/4      teaspoon  ginger
 
  Place ribs in a single layer in shallow roasting pan, meaty side up.
 
@@ -1139,12 +1120,12 @@ Serving Size  : 6     Preparation Time : 0:45
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
-       2          cups  fully cooked smoked ham -- cut up
+       2          cups  ham -- cut up
        1           cup  Swiss cheese -- shredded
      1/3           cup  chopped green onions
        4                eggs
        2          cups  milk
-       1           cup  Bisquick. baking mix
+       1           cup  Bisquick baking mix
      1/4      teaspoon  salt
      1/8      teaspoon  pepper
 
@@ -1248,7 +1229,7 @@ Categories    :
      1/2         pound  pork sausage
        1         small  onion -- chopped
      1/8      teaspoon  minced garlic
-   1 1/2          cups  cubed cooked ham
+   1 1/2          cups  ham
        1                Bay leaf
        2          cans  Navy beans -- (15 oz. each)
      1/4           cup  dry white wine
@@ -1365,7 +1346,7 @@ Serving Size  : 1     Preparation Time : 1:10
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
-       5        pounds  canned ham
+       5        pounds  ham
      1/4           cup  apple juice
        1           cup  cognac
      1/4           cup  corn syrup
@@ -1397,7 +1378,7 @@ Nutr. Assoc. : 0
                      Apricot Glazed Ham
 
 Recipe By     : 
-Serving Size  : 6     Preparation Time : 0:00
+Serving Size  : 6     Preparation Time : 1:30
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
