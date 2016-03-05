@@ -40,7 +40,7 @@ class recipe:
         self.title = title                  # string
         self.prep_time = prep_time          # string of format [0-9]:[0-5][0-9]
         self.ingredients = ingredients      # list of ingredients
-        self.ing_size = len(ingredients)    # integer
+        self.mutate_history = []            # list of mutate actions
         self.score = 0                      # score of all points assigned in inter-Agent evaluation steps
         self.scoreList = []                 # List to keep track of all the awarded points
         # -----------------------------------------------
@@ -58,6 +58,10 @@ class recipe:
                 return False
         else:
             return "Agent.__eq__() : Wrong type! Need 'Agent' type to compare."
+
+    def retLength(self):
+        return len(self.ingredients)
+
 
 #CLEANUP OF INGREDIENTS STRINGS
 def clean_ingredients(ingr_list):

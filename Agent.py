@@ -17,6 +17,8 @@ import random
 import sys
 import itertools    # for permutations on our agent array
 import Generation
+from Presets import *
+from Recipe import *
 import copy
 from copy import deepcopy
 
@@ -36,8 +38,6 @@ class Agent(object):
     preferences = ["meat","fish","veggi"]
 
     recipies = []
-
-
 
     def setIDA(self):
         """
@@ -65,9 +65,58 @@ class Agent(object):
         # ReviewMe : giving back only the 1st one at the moment
         return self.recipies[0]
 
+    def mutate(self):
+        
+        if do_mutate:
+
+            recipe = self.recipies[0]
+            actions = ["none", "add", "delete", "substitute"]
+            random_number = random.randrange(len(actions))
+
+            #TODO: delete
+            print
+            print
+            print(recipe.title)
+            print(recipe.ingredients)
+        
+            action = actions[random_number]
+
+            if action == "delete" and recipe.retLength() >= 3:
+
+                x = random.randrange(recipe.retLength())
+                ingr = recipe.ingredients.pop(x)
+                recipe.mutate_history.append([self.idA,"deleted " + ingr])
+
+            elif action == "add":
+
+                x = random.randrange(len(all_ingredients))
+                recipe.ingredients.append(all_ingredients[x])
+                recipe.mutate_history.append([self.idA,"added " + all_ingredients[x]])
+
+            elif action == "substitute" and recipe.retLength() >= 3:
+
+                x = random.randrange(recipe.retLength())
+                y = random.randrange(len(all_ingredients))
+
+                ingr1 = recipe.ingredients.pop(x)
+                recipe.ingredients.append(all_ingredients[y])
+                recipe.mutate_history.append([self.idA,"substituted " + ingr1 + " with " + all_ingredients[y]])
+
+            else:
+
+                recipe.mutate_history.append([self.idA,"none"])
+
+            #TODO: delete
+            print
+            print("Agent " + str(self.idA) + " is cooking!")
+            print("..." + recipe.mutate_history[-1][-1])
+            print
+            print(recipe.ingredients)
+    
 
 
-    def __init__(self, pref,parent):
+    def __init__(self, pref,parent,GenPath):
+
 
         # each Agent will eventually be assigned to a social group, we may want to know
         # to which one later on:
@@ -134,7 +183,7 @@ class Agent(object):
         else:
             print("Agent.__init__() - error: false parameters at instantiation")
 
-
+        self.mutate()
 
 
     def __eq__(self,other):
@@ -151,30 +200,6 @@ class Agent(object):
 
     def getPref(self):
         return self.preference
-
-    def mutate(self):
-        
-        recipe = self.thelist
-        actions = ["none", "add", "delete", "substitute"]
-        random_number = random.randrange(len(actions))
-    
-        action = actions[random_number]
-    
-        if action == "none":
-            pass
-        elif action == "delete":
-            x = random.randrange(recipe.ing_size)
-            recipe.ingredients.pop(x)
-        elif action == "add":
-            x = random.randrange(len(all_ingredients))
-            recipe.ingredients.append(all_ingredients[x])
-        else:
-            x = random.randrange(recipe.ing_size)
-            recipe.ingredients.pop(x)
-            y = random.randrange(len(all_ingredients))
-            recipe.ingredients.append(all_ingredients[y])
-    
-        #return recipe.ingredients
     
     
     def judgeMyRec(self,agentOb):
