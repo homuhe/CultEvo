@@ -168,7 +168,7 @@ class Generation(object):
                 # ====================================
 
                 # create a folder for this Generation
-                self.GenPath = simRunPath + "Generation_000\\"
+                self.GenPath = simRunPath + "Generation_000/"
                 if os.path.isdir(self.GenPath):
                     pass
                     # ReviewMe: actually this isn't a good sign, there shouldn't be anything at this point in time :/
