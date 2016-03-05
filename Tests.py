@@ -119,7 +119,7 @@ def RetRecipies(start,end):
         print
         print("Category: " + recipe.category.split("\\")[-1])
         print("Title: " + recipe.title)
-        print("PrepTime: " + recipe.prep_time)
+        print("PrepTime: " + recipe.rel_prep_time)
         print("Ingreds: ")
         print(recipe.ingredients)
         print("Ing Size: " + str(recipe.ing_size))
@@ -134,7 +134,7 @@ def RetAllRec():
         print
         print("Category: " + recipe.category.split("\\")[-1])
         print("Title: " + recipe.title)
-        print("PrepTime: " + recipe.prep_time)
+        print("PrepTime: " + recipe.rel_prep_time)
         print("Ingreds: ")
         print(recipe.ingredients)
         print("Ing Size: " + str(recipe.ing_size))

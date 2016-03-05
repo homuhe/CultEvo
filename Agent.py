@@ -178,7 +178,7 @@ class Agent(object):
                 # only use the main preference to randomly pick recipe
                 self.recipies = random.sample(copy.deepcopy(self.thelist),1)
                 # determine what time is acceptable for this Agent
-                self.timePref = self.recipies[0].prep_time
+                self.timePref = self.recipies[0].rel_prep_time
 
         else:
             print("Agent.__init__() - error: false parameters at instantiation")
@@ -219,7 +219,7 @@ class Agent(object):
             if self.getPref() == agentOb.getPref():
                 self.retRec().score += 1
                 self.judgeSc += 1
-            if self.timePref == agentOb.retRec().prep_time:
+            if self.timePref == agentOb.retRec().rel_prep_time:
                 self.retRec().score += 1
                 self.judgeSc += 1
             for i in agentOb.retRec().ingredients:
@@ -248,7 +248,7 @@ class Agent(object):
             if self.getPref() == agentOb.getPref():
                 self.retRec().score += 1
                 self.judgeSc += 1
-            if self.timePref == agentOb.retRec().prep_time:
+            if self.timePref == agentOb.retRec().rel_prep_time:
                 self.retRec().score += 1
                 self.judgeSc += 1
             for i in agentOb.retRec().ingredients:

@@ -15,6 +15,7 @@
 '''
 
 import glob, re, os, pprint, sys
+from Presets import *
 
 recipes_dir = os.path.dirname(os.path.realpath(__file__)) + "/Recipes/"
 
@@ -34,17 +35,18 @@ class recipe:
             category = "meat"
         elif category.startswith("veg"):
             category = "veggi"
+
             
-        
-        self.category = category            # string
-        self.title = title                  # string
-        self.prep_time = prep_time          # string of format [0-9]:[0-5][0-9]
-        self.ingredients = ingredients      # list of ingredients
-        self.mutate_history = []            # list of mutate actions
-        self.score = 0                      # score of all points assigned in inter-Agent evaluation steps
-        self.scoreList = []                 # List to keep track of all the awarded points
+        self.category = category    	# string of category
+        self.title = title          	# string of recipe title
+        self.prep_time = prep_time     	# string of format [0-9]:[0-5][0-9]
+        self.rel_prep_time = self.retRelTime()	# string of relative time term
+        self.ingredients = ingredients  # list 	 of ingredients
+        self.mutate_history = []        # list   of mutate actions
+        self.score = 0                  # score  of all points assigned in inter-Agent evaluation steps
+        self.scoreList = []             # list   to keep track of all the awarded points
         # -----------------------------------------------
-        self.counter = 0                    # for testing only
+        self.counter = 0                    		# for testing only
 
     def __eq__(self, other):
         # since we use DEEPCOPYs we need a different way of comparing Recipes; just by title right now
@@ -62,6 +64,13 @@ class recipe:
     def retLength(self):
         return len(self.ingredients)
 
+    def retRelTime(self):
+    		if self.prep_time <= timeDic["short"]:
+    			return "short"
+    		elif self.prep_time > timeDic["short"] and self.prep_time <= timeDic["medium"]:
+    			return "medium"
+    		else:
+    			return "long"
 
 #CLEANUP OF INGREDIENTS STRINGS
 def clean_ingredients(ingr_list):
