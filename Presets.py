@@ -48,9 +48,9 @@ parameter = []
 fields = "Number of Generations:", "Number of Agents:","Number of Simulations:",\
          "Meat Agents %:", "Fish Agents %:", "Veggi Agents %:",\
          "Mutate:"
-defaults = 15, 60, 3,\
-           20, 20, 20,\
-           "True"
+defaults = 1, 3, 3,\
+           1, 1, 1,\
+           "False"
 
 class StartWindow(Frame):                          
     def __init__(self, parent=None):           

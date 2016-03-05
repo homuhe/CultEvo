@@ -39,8 +39,6 @@ class Agent(object):
 
     recipies = []
 
-
-
     def setIDA(self):
         """
         Function to assign each Agent instance a easy to read ID for quick testing purposes
@@ -117,7 +115,8 @@ class Agent(object):
     
 
 
-    def __init__(self, pref,parent):
+    def __init__(self, pref,parent,GenPath):
+
 
         # each Agent will eventually be assigned to a social group, we may want to know
         # to which one later on:

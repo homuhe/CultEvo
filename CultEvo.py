@@ -15,10 +15,10 @@
 
 import random
 
-import Tests as Test
+import time
 import Generation
 import Presets as P
-import exceptions
+import os
 import Analysis as stat
 
 
@@ -28,58 +28,60 @@ random.seed()
 
 
 
-
 class CultEvo(object):
 
     numOfGenerations = 0
 
-    def __init__(self):
+    def writeToFileSimulation(self):
+        pass
+
+    def __init__(self,ce_id):
+
+
+        # Main Directory:
+        # main path
+        self.main_path = os.path.dirname(os.path.realpath(__file__)) + "\\"
+
+        self.simulationsPath = os.path.dirname(os.path.realpath(__file__)) + "\\Simulations\\"
+        if os.path.isdir(self.simulationsPath):
+            pass
+        else:
+            os.makedirs(self.simulationsPath)
+
+        # Collection of all CultEvo runs
+        # something of the form : ..cwd..\Simulations_2016-03-04_[13_23_06]\
+        self.simulationPath = self.simulationsPath + "\\Sim_{}\\".format(ce_id)
+        if os.path.isdir(self.simulationPath):
+            pass
+        else:
+            os.makedirs(self.simulationPath)
+
+        # individual simulation run paths(holding all its generation folders):
+        self.simRunPath = self.simulationPath + "SimRun_000\\"
+
+        if os.listdir(self.simulationPath).__len__() == 0:
+            os.makedirs(self.simRunPath)
+
+        else:
+            # get the highest index of the already existing folders.
+            # ReviewMe: in order to work YOU MUST NOT ALTER THE CONTENT OR NAMES OF THE
+            #           FOLDER STRUCTURE MANUALLY IN ANY WAY !!!!!!...!!!!!!!!!!!!
+
+            self.simRunPath = self.simulationPath + "SimRun_{:03}\\".format(int(list(os.listdir(self.simulationPath).__reversed__())[0].split("_")[1])+1)
+            os.makedirs(self.simRunPath)
+
+        # for Generation folders check in Generation.py
+
+
+
         # Variable determining how many generations we want to allow
         generations = P.generations
 
-        agentGen = Generation.Generation(P.numberAgents,generations)
+        generationRun = Generation.Generation(P.numberAgents,generations,self.simRunPath)
 
-        agentArray = agentGen.getAgentArr()
-
-
-
-        #Test.CntTest(agentArray)
-
-        # when one generation is done, increase generation counter
-        #print Generation.agentsOverGenerations.__len__()
-        #print Generation.agentsOverAllDict.__len__()
-        #for agnLst in range(Generation.agentsOverAllDict.__len__()) :
-        #    print ( " ---   ---   --- ")
-        #    for x in Generation.agentsOverAllDict[agnLst]:
-        #        print"IDA: {:3}  Name: {:>50}   Parents: {}".format(x.retIDA(),x.retRec().title,x.ancestors)
-        #    print "Winning Recipe: {:35}".format(Generation.RecListOverGenerations[agnLst])
+        self.numOfGenerations = generationRun.countGenUp
 
 
-
-        #Test.RetRecipies(0,5)
-        #Test.RetAllRec()
-        #Test.RetGenRecArr(0)
-        #Test.RetWinGenRecArr(0)
-
-        # for gen in range(Generation.SocialGroups.__len__()):
-        #    print "Generation: " + str(gen)
-        #    print()
-        #    Test.RetSGArrsRec(gen)
-
-        # print
-        # print " =============================================== "
-        # print " |                                             |"
-        # print " | Recipes all similar after {:3} Generations!  |".format(agentGen.countGenUp)
-        # print " |                                             |"
-        # print " =============================================== "
-
-        #print Generation.WinningArrsOverGenerations.__len__()
-        #Test.RetWinGenRecArr(0)
-
-        #Test.RetAllGenAgents(agentArray)
-        #Test.RetAllAgents()
-
-        self.numOfGenerations = agentGen.countGenUp
 
 
 
@@ -87,12 +89,19 @@ class CultEvo(object):
 
 lstOfGenerationsNumbers = []
 
+# setting up an unique identifier for each simulation
+ce_id = time.strftime("%Y-%m-%d_") + time.strftime("[%H_%M_%S]")
+
 for x in range(P.numberOfSimulationRuns):
-    runX = CultEvo();
-    #runX
+
+    global idA
+    idA = 0
+    runX = CultEvo(ce_id);
+
+
     lstOfGenerationsNumbers.append(runX.numOfGenerations)
-    #print lstOfGenerationsNumbers.__len__()
-    #print lstOfGenerationsNumbers
+
+
 
 #for index,num in enumerate(lstOfGenerationsNumbers):
 #    print"Simulation {:3} needed {:3} Generations for complete degradation! ".format(index+1,num)
