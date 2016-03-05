@@ -22,7 +22,7 @@ from tkMessageBox import askokcancel
 # if maxSocSize is greater than the initial amount of agents we get social
 # groups of size two and one exclusively;
 # maxSocSize must not be smaller than 3!
-maxSocSize = 3
+#maxSocSize = 3
 
 
 # =================================================================================================
@@ -45,10 +45,10 @@ recDic = {"short":5,"medium":10}            # more than 10 elements implicates a
 
 parameter = []
 
-fields = "Number of Generations:", "Number of Agents:","Number of Simulations:",\
+fields = "Number of Generations:", "Number of Agents:", "Max Size of Social Groups:","Number of Simulations:",\
          "Meat Agents %:", "Fish Agents %:", "Veggi Agents %:",\
          "Mutate:"
-defaults = 1, 3, 3,\
+defaults = 1, 3, 3, 3,\
            1, 1, 1,\
            "False"
 
@@ -68,11 +68,12 @@ def run(input):
     parameter = [x.get() for x in input]
     generations     = int(parameter[0])
     numberAgents    = int(parameter[1])
-    numberOfSimulationRuns = int(parameter[2])
-    facMeat         = int(parameter[3])
-    facFish         = int(parameter[4])
-    facVeggi        = int(parameter[5])
-    do_mutate       = bool(parameter[6])
+    maxSocSize		= int(parameter[2])
+    numberOfSimulationRuns = int(parameter[3])
+    facMeat         = int(parameter[4])
+    facFish         = int(parameter[5])
+    facVeggi        = int(parameter[6])
+    do_mutate       = bool(parameter[7])
     print(parameter)
 
 def create(root, fields):
@@ -101,7 +102,7 @@ def create(root, fields):
 
 
 root = Tk()
-root.title("CultEvo 0.5")
+root.title("CultEvo 0.6")
 root.geometry("500x300")
 
 vars = create(root, fields)
@@ -114,11 +115,12 @@ root.mainloop()
 if len(parameter) != 0:
     generations     = int(parameter[0])
     numberAgents    = int(parameter[1])
-    numberOfSimulationRuns = int(parameter[2])
-    facMeat         = int(parameter[3])
-    facFish         = int(parameter[4])
-    facVeggi        = int(parameter[5])
-    do_mutate       = bool(parameter[6])
+    maxSocSize		= int(parameter[2])
+    numberOfSimulationRuns = int(parameter[3])
+    facMeat         = int(parameter[4])
+    facFish         = int(parameter[5])
+    facVeggi        = int(parameter[6])
+    do_mutate       = bool(parameter[7])
 else:
     sys.exit("CultEvo is closed.")
 
