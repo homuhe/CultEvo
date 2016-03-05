@@ -102,7 +102,7 @@ def create(root, fields):
 
 
 root = Tk()
-root.title("CultEvo 0.6")
+root.title("CultEvo 0.7")
 root.geometry("500x300")
 
 vars = create(root, fields)
