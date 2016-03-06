@@ -14,21 +14,15 @@ __author__ = 'AD'
 
 
 import random
-import sys
-import itertools    # for permutations on our agent array
 import Generation
-from Presets import *
+
 from Recipe import *
 import copy
-from copy import deepcopy
-
 import Recipe as REx
-
+import Config as cfg
 
 random.seed()
 
-global idA
-idA = 0
 
 class Agent(object):
 
@@ -45,18 +39,18 @@ class Agent(object):
 
         :return:
         """
-        global idA
-        self.idA = idA
-        idA += 1
 
-    def retIDA(self):
+        self.idA = cfg.idA
+        cfg.idA += 1
+
+    def getIDA(self):
         """
         Read out the easy to read ID provided by Agent.setIDA()
         :return:
         """
         return self.idA
 
-    def retRec(self):
+    def getRec(self):
 
         '''
         :return: The Recipies that this agent uses
@@ -74,10 +68,10 @@ class Agent(object):
             random_number = random.randrange(len(actions))
 
             #TODO: delete
-            print
-            print
-            print(recipe.title)
-            print(recipe.ingredients)
+            #print
+            #print
+            #print(recipe.title)
+            #print(recipe.ingredients)
         
             action = actions[random_number]
 
@@ -107,11 +101,11 @@ class Agent(object):
                 recipe.mutate_history.append([self.idA,"none"])
 
             #TODO: delete
-            print
-            print("Agent " + str(self.idA) + " is cooking!")
-            print("..." + recipe.mutate_history[-1][-1])
-            print
-            print(recipe.ingredients)
+            #print
+            #print("Agent " + str(self.idA) + " is cooking!")
+            #print("..." + recipe.mutate_history[-1][-1])
+            #print
+            #print(recipe.ingredients)
     
 
 
@@ -161,10 +155,10 @@ class Agent(object):
                 #                       Generation.agentsOverGenerations[self.ancestors[self.ancestors.__len__()-1]]
 
                 # ReviewMe: copying of Recipes as DEEPCOPYs, otherwise we will constantly add to the same object instance, not individual ones
-                index_gen = Generation.agentsOverGenerations[self.ancestors[self.ancestors.__len__()-1]].sgID[0]
-                index_socLst = Generation.agentsOverGenerations[self.ancestors[self.ancestors.__len__()-1]].sgID[1]
-                self.recipies.append(copy.deepcopy(Generation.WinningArrsOverGenerations[index_gen][index_socLst]))
-                # ReviewMe: accumulate or not? FixMe
+                index_gen = cfg.agentsOverGenerations[self.ancestors[self.ancestors.__len__()-1]].sgID[0]
+                index_socLst = cfg.agentsOverGenerations[self.ancestors[self.ancestors.__len__()-1]].sgID[1]
+                self.recipies.append(copy.deepcopy(cfg.WinningArrsOverGenerations[index_gen][index_socLst]))
+                # ReviewMe: accumulate score or not? FixMe
                 self.recipies[0].score = 0
 
             else:
@@ -190,7 +184,7 @@ class Agent(object):
         # test for equality according to our definition
         # question arises: when are two recipes equal = ReviewMe
         if type(self)==type(other):
-            if (self.retIDA() == other.retIDA()):
+            if (self.getIDA() == other.getIDA()):
                 return True
             else:
                 return False
@@ -215,19 +209,19 @@ class Agent(object):
             sys.exit("Agent.judgeMyRec() - object not of type Agent")
         else:
             #print()
-            #print("Agent: " + str(agentOb.retIDA()))
+            #print("Agent: " + str(agentOb.getIDA()))
             if self.getPref() == agentOb.getPref():
-                self.retRec().score += 1
-                self.judgeSc += 1
-            if self.timePref == agentOb.retRec().rel_prep_time:
-                self.retRec().score += 1
-                self.judgeSc += 1
-            for i in agentOb.retRec().ingredients:
-                if i in  self.retRec().ingredients:
-                    self.retRec().score += 1
+                self.getRec().score += 4
+                self.judgeSc += 4
+            if self.timePref == agentOb.getRec().rel_prep_time:
+                self.getRec().score += 2
+                self.judgeSc += 2
+            for i in agentOb.getRec().ingredients:
+                if i in  self.getRec().ingredients:
+                    self.getRec().score += 1
                     self.judgeSc += 1
 
-        #print "Judge{:3} gave {:4} points for {}".format(agentOb.retIDA(),self.judgeSc,self.retRec().title)
+        #print "Judge{:3} gave {:4} points for {}".format(agentOb.getIDA(),self.judgeSc,self.getRec().title)
         # FixMe: Range for number of ingreds
 
     # <editor-fold desc=" judgeMyRec(self.agentOb) tmps to compare different rule sets
@@ -244,19 +238,19 @@ class Agent(object):
             sys.exit("Agent.judgeMyRec() - object not of type Agent")
         else:
             #print()
-            #print("Agent: " + str(agentOb.retIDA()))
+            #print("Agent: " + str(agentOb.getIDA()))
             if self.getPref() == agentOb.getPref():
-                self.retRec().score += 1
+                self.getRec().score += 1
                 self.judgeSc += 1
-            if self.timePref == agentOb.retRec().rel_prep_time:
-                self.retRec().score += 1
+            if self.timePref == agentOb.getRec().rel_prep_time:
+                self.getRec().score += 1
                 self.judgeSc += 1
-            for i in agentOb.retRec().ingredients:
-                if i in  self.retRec().ingredients:
-                    self.retRec().score += 1
+            for i in agentOb.getRec().ingredients:
+                if i in  self.getRec().ingredients:
+                    self.getRec().score += 1
                     self.judgeSc += 1
 
-        #print "Judge{:3} gave {:4} points for {}".format(agentOb.retIDA(),self.judgeSc,self.retRec().title)
+        #print "Judge{:3} gave {:4} points for {}".format(agentOb.getIDA(),self.judgeSc,self.getRec().title)
         # FixMe: Range for number of ingreds
 
     def setSocGrp(self,genCounter,sgID):
@@ -269,4 +263,8 @@ class Agent(object):
         self.sgID = [genCounter,sgID]
 
     def getSocGrp(self):
+        """
+        A textual representation of the SocialGroup this Agent belongs to
+        :return: String holding information about this Agents SocialGroup
+        """
         return "Gen-{:2} SG-{:2}".format(self.sgID[0],self.sgID[1])

@@ -6,19 +6,7 @@ import Write
 import Agent
 import Recipe as REx
 import Presets as P
-
-"""
-global agentsOverGenerations
-agentsOverGenerations = []
-global RecListOverGenerations
-RecListOverGenerations = {}
-global agentsOverAllDict
-agentsOverAllDict = {}
-global WinningArrsOverGenerations
-WinningArrsOverGenerations = {}
-global SocialGroups
-SocialGroups = {}
-"""
+import Config as cfg
 
 
 def DetSGArrayWinners(counter):
@@ -31,7 +19,7 @@ def DetSGArrayWinners(counter):
     winLst = [REx.recipe("", "", "", [])]
 
     # social groups of the Generation determined by 'counter'
-    scGrps = SocialGroups[counter]
+    scGrps = cfg.SocialGroups[counter]
     cnta = 0
     for agntGrp in scGrps:
 
@@ -40,13 +28,13 @@ def DetSGArrayWinners(counter):
             for agnt in agntGrp:
 
                 if winLst.__len__() < cntb:
-                    winLst.append(agnt.retRec())
+                    winLst.append(agnt.getRec())
                 else:
                     # if we have the same score we go for first come first serve
-                    if winLst[cnta].score < agnt.retRec().score:
-                        winLst[cnta] = agnt.retRec()
+                    if winLst[cnta].score < agnt.getRec().score:
+                        winLst[cnta] = agnt.getRec()
         elif isinstance(agntGrp[0],Agent.Agent):
-            winLst.append(agntGrp[0].retRec())
+            winLst.append(agntGrp[0].getRec())
         else:
             sys.exit("Generation.DetSGArrayWinners(): Could not determine winning recipies!")
         cnta += 1
@@ -60,36 +48,22 @@ class Generation(object):
     #    Infos regarding Lists and Dicts
     #
     # ======================================
-    # All Agents ever created, one consecutive list
-    global agentsOverGenerations
-    agentsOverGenerations = []
 
-    # same as above just as a dictionary
-    # {int_index : [Agent List for the Generation specified by int_index]}
-    global agentsOverAllDict
-    agentsOverAllDict = {}
 
     # array with Agents of one Generation
     agentArr = []
 
-    # a dictionary holding all the recipies for each Generation in an array
-    # RecListOverGenerations{"int_Index : Recipe"}
-    global RecListOverGenerations
-    RecListOverGenerations = {}
+
     # the Array holding the recipies for an individual Generation
     genRecArr = []
 
     # List holding the Recipies that got the highest score in each social
     # group and were passed on
 
-    global WinningArrsOverGenerations
-    WinningArrsOverGenerations = {}
     winGenRecArr = []
 
 
-    # The name says it all, Dictionary holding the social groups for each Generation
-    global SocialGroups
-    SocialGroups = {}
+    # List holding the Social Groups of this Generation
     SGArrs = []
 
     # ReviewMe: Number of modifications per Agents and recipe
@@ -179,20 +153,20 @@ class Generation(object):
 
                 # assigning the arrays only for the first Generation
                 self.SGArrs = []
-                global SocialGroups
-                SocialGroups[self.countGenUp] = self.SGArrs
+
+                cfg.SocialGroups[self.countGenUp] = self.SGArrs
 
                 self.genRecArr = []
-                global RecListOverGenerations
-                RecListOverGenerations[self.countGenUp] = self.genRecArr
+
+                cfg.RecListOverGenerations[self.countGenUp] = self.genRecArr
 
                 self.winGenRecArr = []
-                global WinningArrsOverGenerations
-                WinningArrsOverGenerations[self.countGenUp] = self.winGenRecArr
+
+                cfg.WinningArrsOverGenerations[self.countGenUp] = self.winGenRecArr
 
                 self.agentArr = []
-                global agentsOverAllDict
-                agentsOverAllDict[self.countGenUp] = self.agentArr
+
+                cfg.agentsOverAllDict[self.countGenUp] = self.agentArr
 
                 # Setting up a weighted distribution of preferences so that we can determine what flavor might be
                 # the predominant one; integers obviously need to add up to 100
@@ -215,9 +189,9 @@ class Generation(object):
                 #    print "self.agnt idA = {:3} ||  Ancestors = {:3}".format(self.agnt.idA,self.agnt.ancestors)
                     self.agnt.judgeMyRec(self.agnt)
                     # after creating an agent we store his/her Recipe in genRecArr
-                    self.genRecArr.append(self.agnt.retRec())
+                    self.genRecArr.append(self.agnt.getRec())
                     self.agentArr.append(self.agnt)
-                    agentsOverGenerations.append(self.agnt)
+                    cfg.agentsOverGenerations.append(self.agnt)
 
                 # if we want to let them interact we need to shuffle the array so that the instances are
                 # randomly distributed
@@ -312,18 +286,16 @@ class Generation(object):
                 # print self.winGenRecArr.__len__()
                 self.winGenRecArr = DetSGArrayWinners(self.countGenUp)
 
-                WinningArrsOverGenerations[self.countGenUp] = self.winGenRecArr
+                cfg.WinningArrsOverGenerations[self.countGenUp] = self.winGenRecArr
                 # print self.winGenRecArr.__len__()
 
                 for agnt in self.agentArr:
                     Write.WriteAgent(self.GenPath,agnt)
 
-                # Write Generation Statistic to file
-                global WinningArrsOverGenerations
-                global agentsOverAllDict
-                global agentsOverGenerations
-                Write.WriteGen(self.GenPath,self.countGenUp,self.agentArr,self.SGArrs,self.winGenRecArr,WinningArrsOverGenerations,
-                               agentsOverAllDict,agentsOverGenerations)
+                # Write Generation data to file
+
+                Write.WriteGen(self.GenPath,self.countGenUp,self.agentArr,self.SGArrs,self.winGenRecArr,cfg.WinningArrsOverGenerations,
+                               cfg.agentsOverAllDict,cfg.agentsOverGenerations)
 
                 # </editor-fold>
             elif self.countGenUp > 0:
@@ -340,28 +312,28 @@ class Generation(object):
                 # reverse it, take the first = [0] element, which should have the highest index
                 # split the entry at '_' and take the part that should contain the number, cast to int
                 # add one to increase the current folder count
-                self.GenPath = simRunPath + "Generation_{:03}/".format(int(list(os.listdir(simRunPath).__reversed__())[0].split("_")[1])+1)
+                self.GenPath = simRunPath + "Generation_{:03}/".format(int(sorted(os.listdir(simRunPath))[-1].split("_")[1])+1)
                 os.makedirs(self.GenPath)
 
                 # <editor-fold desc="Higher Order Generation SetUp">
                 self.SGArrs = []
-                SocialGroups[self.countGenUp] = self.SGArrs
+                cfg.SocialGroups[self.countGenUp] = self.SGArrs
 
                 self.genRecArr = []
-                RecListOverGenerations[self.countGenUp] = self.genRecArr
+                cfg.RecListOverGenerations[self.countGenUp] = self.genRecArr
 
                 self.winGenRecArr = []
-                WinningArrsOverGenerations[self.countGenUp] = self.winGenRecArr
+                cfg.WinningArrsOverGenerations[self.countGenUp] = self.winGenRecArr
 
                 self.agentArr = []
-                agentsOverAllDict[self.countGenUp] = self.agentArr
+                cfg.agentsOverAllDict[self.countGenUp] = self.agentArr
 
                 # populating the array with Agent instances as offsprings of our
                 # predecessor generation
                 #print()
                 #print "  --- --- --- "
                 #print "Agents in Generation: {:3}".format(self.countGenUp)
-                for x in agentsOverAllDict[self.countGenUp-1]:
+                for x in cfg.agentsOverAllDict[self.countGenUp-1]:
                     self.agnt = Agent.Agent(x.preference, x, self.GenPath)
                     #print
                     #print "self.agnt idA = {:3} ||  x.idA = {:3}".format(self.agnt.idA,x.idA)
@@ -371,9 +343,9 @@ class Generation(object):
                     # You get to judge your own culinary oeuvre
                     self.agnt.judgeMyRec(self.agnt)
                     # after creating an agent we store his/her Recipe in genRecArr
-                    self.genRecArr.append(self.agnt.retRec())
+                    self.genRecArr.append(self.agnt.getRec())
                     self.agentArr.append(self.agnt)
-                    agentsOverGenerations.append(self.agnt)
+                    cfg.agentsOverGenerations.append(self.agnt)
 
                 # if we want to let them interact we need to shuffle the array so that the instances are
                 # randomly distributed
@@ -446,7 +418,7 @@ class Generation(object):
                         except ValueError:
                             print ("Could not create social environment of small size!")
 
-                    # FixMe: correct? left it out originally
+                    # ReviewMe: correct? left it out originally
                     else:
                         # again, dont judge your own again, only keep track of lonely singles in the social statistics
                         # ReviewMe: Careful now: we pass on a single agent as a LIST with one entry: DO NOT MIX THAT UP!
@@ -459,7 +431,7 @@ class Generation(object):
                 # print self.winGenRecArr.__len__()
                 self.winGenRecArr = DetSGArrayWinners(self.countGenUp)
 
-                WinningArrsOverGenerations[self.countGenUp] = self.winGenRecArr
+                cfg.WinningArrsOverGenerations[self.countGenUp] = self.winGenRecArr
                 # print self.winGenRecArr.__len__()
                 # </editor-fold>
 
@@ -467,19 +439,20 @@ class Generation(object):
                     Write.WriteAgent(self.GenPath,agnt)
 
                 # Write Generation Statistic to file
-                Write.WriteGen(self.GenPath,self.countGenUp,self.agentArr,self.SGArrs,self.winGenRecArr,WinningArrsOverGenerations,
-                               agentsOverAllDict,agentsOverGenerations)
+                Write.WriteGen(self.GenPath,self.countGenUp,self.agentArr,self.SGArrs,self.winGenRecArr,cfg.WinningArrsOverGenerations,
+                               cfg.agentsOverAllDict,cfg.agentsOverGenerations)
 
-
-            # AmDone: make sure this is working as it is supposed to!
-            self.countGenUp += 1
 
             recSet = set()
-            for rec in RecListOverGenerations[self.countGenUp-1]:
+            for rec in cfg.RecListOverGenerations[self.countGenUp]:
                 recSet.add(rec.title)
 
             if recSet.__len__() == 1:
                 self.goOn = False
+
+            # AmDone: make sure this is working as it is supposed to!
+            self.countGenUp += 1
+
         # </editor-fold>
 
 
@@ -501,6 +474,6 @@ class Generation(object):
          Recipies after the simulation is done
         :return: Array with ALL Agents over all Generations
         '''
-        return agentsOverGenerations
+        return cfg.agentsOverGenerations
 
 
