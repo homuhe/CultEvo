@@ -43,7 +43,7 @@ class CultEvo(object):
 
         # Collection of all CultEvo runs
         # something of the form : ..cwd..\Simulations_2016-03-04_[13_23_06]\
-        self.simulationPath = self.simulationsPath + "/Sim_{}/".format(ce_id)
+        self.simulationPath = self.simulationsPath + "Sim_{}/".format(ce_id)
         if os.path.isdir(self.simulationPath):
             pass
         else:
@@ -60,8 +60,10 @@ class CultEvo(object):
             # ReviewMe: in order to work YOU MUST NOT ALTER THE CONTENT OR NAMES OF THE
             #           FOLDER STRUCTURE MANUALLY IN ANY WAY !!!!!!...!!!!!!!!!!!!
 
-            self.simRunPath = self.simulationPath + "SimRun_{:03}/".format(int(list(os.listdir(self.simulationPath).__reversed__())[0].split("_")[1])+1)
+
+            self.simRunPath = self.simulationPath + "SimRun_{:03}/".format(int(sorted(os.listdir(self.simulationPath))[-1].split("_")[1])+1)
             os.makedirs(self.simRunPath)
+
 
         # for Generation folders check in Generation.py
 

@@ -36,7 +36,7 @@ class WriteGen(object):
             f.write("SG Number: {:02}\n".format(SGArrs.index(sg)))
             for agnt in sg:
                 f.write("   Agent         : {:03}\n".format(agnt.getIDA()))
-            f.write("   Winning recipe: {}\n".format(winGenRecArr[SGArrs.index(sg)].title))
+            f.write("   Winning recipe: {}, {} likes\n".format(winGenRecArr[SGArrs.index(sg)].title, winGenRecArr[SGArrs.index(sg)].score))
             f.write("\n")
 
         f.write("Sum of all agents so far            : {}\n".format(agentsOverGenerations.__len__()))
@@ -44,12 +44,19 @@ class WriteGen(object):
         f.write("and in the current generation:\n")
         for agnt in agentsOverAllDict[countGenUp]:
             f.write("   Agent {}\n".format(agnt.getIDA()))
-        f.write("size of WinningArrsOverGenerations  : {}\n".format(WinningArrsOverGenerations.__len__()))
+        f.write("size of WinningArrsOverGenerations  : {}\n\n\n".format(WinningArrsOverGenerations.__len__()))
+
+        f.write("\nOverview over all Generations:\n")
+        f.write("==============================\n\n")
         f.write("All recipes contained: \n")
+        
+        n = 1
         for reclst in WinningArrsOverGenerations:
+            f.write("\nGeneration " + str(n) + ":\n")
             f.write("------   ------   ------\n")
             for rec in WinningArrsOverGenerations[reclst]:
-                f.write("   RecName: {}\n".format(rec.title))
+                f.write("   RecName: {:>40}, {:>3} likes\n".format(rec.title, rec.score))
+            n += 1
         f.close()
 
 
@@ -72,10 +79,10 @@ class WriteAgent(object):
         f.write("Agent Overview\n")
         f.write("==============\n")
         f.write("\n")
-        f.write("ID         : {:>6}\n".format(agnt.getIDA()))
-        f.write("Preference:: {:>6}\n".format(agnt.preference))
+        f.write("ID        : {:>6}\n".format(agnt.getIDA()))
+        f.write("Preference: {:>6}\n".format(agnt.preference))
         f.write("\n")
-        f.write("Recipe     : {}\n".format(agnt.getRec().title))
+        f.write("Recipe    : {}\n".format(agnt.getRec().title))
         f.close()
 
 

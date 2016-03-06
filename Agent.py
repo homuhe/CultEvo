@@ -211,11 +211,11 @@ class Agent(object):
             #print()
             #print("Agent: " + str(agentOb.getIDA()))
             if self.getPref() == agentOb.getPref():
-                self.getRec().score += 1
-                self.judgeSc += 1
+                self.getRec().score += 4
+                self.judgeSc += 4
             if self.timePref == agentOb.getRec().rel_prep_time:
-                self.getRec().score += 1
-                self.judgeSc += 1
+                self.getRec().score += 2
+                self.judgeSc += 2
             for i in agentOb.getRec().ingredients:
                 if i in  self.getRec().ingredients:
                     self.getRec().score += 1

@@ -312,7 +312,7 @@ class Generation(object):
                 # reverse it, take the first = [0] element, which should have the highest index
                 # split the entry at '_' and take the part that should contain the number, cast to int
                 # add one to increase the current folder count
-                self.GenPath = simRunPath + "Generation_{:03}/".format(int(list(os.listdir(simRunPath).__reversed__())[0].split("_")[1])+1)
+                self.GenPath = simRunPath + "Generation_{:03}/".format(int(sorted(os.listdir(simRunPath))[-1].split("_")[1])+1)
                 os.makedirs(self.GenPath)
 
                 # <editor-fold desc="Higher Order Generation SetUp">
@@ -443,15 +443,16 @@ class Generation(object):
                                cfg.agentsOverAllDict,cfg.agentsOverGenerations)
 
 
-            # AmDone: make sure this is working as it is supposed to!
-            self.countGenUp += 1
-
             recSet = set()
-            for rec in cfg.RecListOverGenerations[self.countGenUp-1]:
+            for rec in cfg.RecListOverGenerations[self.countGenUp]:
                 recSet.add(rec.title)
 
             if recSet.__len__() == 1:
                 self.goOn = False
+
+            # AmDone: make sure this is working as it is supposed to!
+            self.countGenUp += 1
+
         # </editor-fold>
 
 

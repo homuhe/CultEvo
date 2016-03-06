@@ -70,9 +70,9 @@ parameter = []
 fields = "Number of Generations:", "Number of Agents:", "Max Size of Social Groups:","Number of Simulations:",\
          "Meat Agents %:", "Fish Agents %:", "Veggi Agents %:",\
          "Mutate:"
-defaults = 1, 3, 3, 3,\
-           1, 1, 1,\
-           "False"
+defaults = 8, 60, 10, 3,\
+           20, 20, 20,\
+           "True"
 
 class StartWindow(Frame):                          
     def __init__(self, parent=None):           
