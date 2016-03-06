@@ -98,7 +98,7 @@ for x in range(P.numberOfSimulationRuns):
     lstOfGenerationsNumbers.append(runX.numOfGenerations)
 
 
-
+Write.WriteStatistics(P, lstOfGenerationsNumbers)
 #for index,num in enumerate(lstOfGenerationsNumbers):
 #    print"Simulation {:3} needed {:3} Generations for complete degradation! ".format(index+1,num)
 
