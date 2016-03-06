@@ -1,4 +1,6 @@
 import time
+import os
+import Analysis as stat
 
 
 # write general data about this generation to a file
@@ -87,3 +89,46 @@ class WriteAgent(object):
 
 
 
+class WriteStatistics(object):
+    """
+    Writing a textual class representation of Statistics 
+    """
+
+    def __init__(self, P, lstOfGenerationsNumbers):
+
+        outputPath = os.path.dirname(os.path.realpath(__file__)) + "/"
+        f = open(outputPath+"Stats.txt","w")
+        f.write(" ====================================================== \n")
+        f.write("||                                                    ||\n")
+        f.write("||   Statistical Properties of this simulation run    ||\n")
+        f.write("||                                                    ||\n")
+        f.write(" ====================================================== \n\n\n")
+
+        f.write("Number of Agents                 : {:>5}\n".format(P.numberAgents))
+        f.write("Maximum size of social groups    : {:>5}\n".format(P.maxSocSize))
+        f.write("Maximum number of Generations    : {:>5}\n".format(P.generations))
+        f.write("Number of individual CultEvo runs: {:>5}\n\n\n\n".format(P.numberOfSimulationRuns))
+
+        f.write("Values:\n")
+        f.write("=======\n\n")
+
+        f.write("Averages and measures of central location\n")
+        f.write(".........................................\n\n")
+
+        f.write("mean        : {:>6.2f}\n".format(stat.mean(lstOfGenerationsNumbers)))
+        f.write("median      : {:>6.2f}\n".format(stat.median(lstOfGenerationsNumbers)))
+        f.write("mean_low    : {:>6.2f}\n".format(stat.median_low(lstOfGenerationsNumbers)))
+        f.write("mean_high   : {:>6.2f}\n".format(stat.median_high(lstOfGenerationsNumbers)))
+        f.write("mean_grouped: {:>6.2f}\n".format(stat.median_grouped(lstOfGenerationsNumbers)))
+        try:
+            f.write("mode        : {:>6.2f}\n\n\n\n".format(stat.mode(lstOfGenerationsNumbers) ))
+        except :
+            f.write("mode        : two equal values found\n")
+
+        f.write("Measures of spread\n")
+        f.write("..................\n\n")
+
+        f.write("Population standard deviation of data: {0:>6.2f}\n".format(stat.pstdev(lstOfGenerationsNumbers)))
+        f.write("Population variance of data          : {0:>6.2f}\n".format(stat.pvariance(lstOfGenerationsNumbers)))
+        f.write("Sample standard deviation of data    : {0:>6.2f}\n".format(stat.stdev(lstOfGenerationsNumbers)))
+        f.write("Sample variance of data              : {0:>6.2f}\n".format(stat.variance(lstOfGenerationsNumbers)))

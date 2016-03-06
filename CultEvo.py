@@ -18,6 +18,7 @@ import random
 import time
 import Generation
 import Presets as P
+import Write
 import os
 import Analysis as stat
 import Config as cfg
@@ -97,52 +98,5 @@ for x in range(P.numberOfSimulationRuns):
 
     lstOfGenerationsNumbers.append(runX.numOfGenerations)
 
-
-
-#for index,num in enumerate(lstOfGenerationsNumbers):
-#    print"Simulation {:3} needed {:3} Generations for complete degradation! ".format(index+1,num)
-
-print
-print " ====================================================== "
-print "||                                                    ||"
-print "||   Statistical Properties of this simulation run    ||"
-print "||                                                    ||"
-print " ====================================================== "
-print
-print
-print "Number of Agents                 : {:>5}".format(P.numberAgents)
-print "Maximum size of social groups    : {:>5}".format(P.maxSocSize)
-print "Maximum number of Generations    : {:>5}".format(P.generations)
-print "Number of individual CultEvo runs: {:>5}".format(P.numberOfSimulationRuns)
-print
-print
-print
-print "Values:"
-print "======="
-print
-print "Averages and measures of central location"
-print "........................................."
-print
-print "mean        : {:>6.2f}".format(stat.mean(lstOfGenerationsNumbers))
-print "median      : {:>6.2f}".format(stat.median(lstOfGenerationsNumbers))
-print "mean_low    : {:>6.2f}".format(stat.median_low(lstOfGenerationsNumbers))
-print "mean_high   : {:>6.2f}".format(stat.median_high(lstOfGenerationsNumbers))
-print "mean_grouped: {:>6.2f}".format(stat.median_grouped(lstOfGenerationsNumbers))
-try:
-    print "mode        : {:>6.2f}".format(stat.mode(lstOfGenerationsNumbers) )
-except :
-    print "mode        : two equal values found"
-print
-print
-print
-print "Measures of spread"
-print ".................."
-print
-print "Population standard deviation of data: {0:>6.2f}".format(stat.pstdev(lstOfGenerationsNumbers))
-print "Population variance of data          : {0:>6.2f}".format(stat.pvariance(lstOfGenerationsNumbers))
-print "Sample standard deviation of data    : {0:>6.2f}".format(stat.stdev(lstOfGenerationsNumbers))
-print "Sample variance of data              : {0:>6.2f}".format(stat.variance(lstOfGenerationsNumbers))
-
-
-
-
+# writing statistics
+Write.WriteStatistics(P, lstOfGenerationsNumbers)
