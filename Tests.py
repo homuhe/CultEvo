@@ -13,8 +13,6 @@ __author__ = 'AD'
 '''
 
 
-
-
 import Recipe as REx
 import Config as cfg
 

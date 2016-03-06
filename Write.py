@@ -132,3 +132,4 @@ class WriteStatistics(object):
         f.write("Population variance of data          : {0:>6.2f}\n".format(stat.pvariance(lstOfGenerationsNumbers)))
         f.write("Sample standard deviation of data    : {0:>6.2f}\n".format(stat.stdev(lstOfGenerationsNumbers)))
         f.write("Sample variance of data              : {0:>6.2f}\n".format(stat.variance(lstOfGenerationsNumbers)))
+        f.close()

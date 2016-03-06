@@ -12,14 +12,14 @@ __author__ = 'AD'
     Module Descr.:  Module and Class to represent an individual Agents in our simulation
 '''
 
-
+import copy
 import random
 import Generation
 
 from Recipe import *
-import copy
 import Recipe as REx
 import Config as cfg
+
 
 random.seed()
 

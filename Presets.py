@@ -11,7 +11,7 @@
     Module Descr.:  General setup of our simulation with GUI implementation
 
 """
-
+import os
 from Tkinter import *
 from tkMessageBox import askokcancel
 
@@ -19,41 +19,24 @@ from tkMessageBox import askokcancel
 
 
 # <editor-fold desc=" Hard coded simulation parameters ">
-# ===============================
-# Amount of Generations
+# ==================================
+# generations: Amount of Generations
 
-#generations = 15
+# =============================================
+# numberAgents: Amount of Agents per Generation
 
-# ========================================
-# Amount of Agents per Generation
-#numberAgents = 60
-
-# Percentages of our main recipe classes
-#facMeat =  20
-#facFish =  20
-#facVeggi = 20
-
-
-# ====================================================
-# Maximum size of social groups/ groups of 'friends'
-# ReviewMe: should be size (n) due to use of range, but is actually (n-1)
-# if maxSocSize is greater than the initial amount of agents we get social
-# groups of size two and one exclusively;
-# maxSocSize must not be smaller than 3!
-#maxSocSize = 3
-
+# ==================================================================
+# facMeat, facFish, facVeggi: Percentages of our main recipe classes
 
 # ==============================================================
-# How often should we repeat the individual CultEvo simulation
+# maxSocSize: Maximum size of social groups/ groups of 'friends'
+# maxSocSize shall not be smaller than 3!
 
-#numberOfSimulationRuns = 3
+# ====================================================================================
+# numberOfSimulationRuns: How often should we repeat the individual CultEvo simulation
 
-# ===============
-# Toggle mutation
-
-#do_mutate = True 
-
-
+# ==========================
+# do_mutate: Toggle mutation
 
 # =================================================================================================
 # Thresholds for what is considered a long/medium/short recipe ingredient list/ preparation time
@@ -67,18 +50,28 @@ recDic = {"short":5,"medium":10}            # more than 10 elements implicates a
 # <editor-fold desc=" Startup GUI implementation ">
 parameter = []
 
+defaultsPath = os.path.dirname(os.path.realpath(__file__)) + "/"
+
+if os.path.isfile(defaultsPath+".defaults.txt"):
+    defaults = []
+    f = open(defaultsPath+".defaults.txt","r")
+    for line in f.readlines():
+        defaults.append(line.strip())
+    f.close()
+else:
+    defaults = 8, 60, 10, 3,\
+              20, 20, 20,\
+              "True"
+
 fields = "Number of Generations:", "Number of Agents:", "Max Size of Social Groups:","Number of Simulations:",\
          "Meat Agents %:", "Fish Agents %:", "Veggi Agents %:",\
          "Mutate:"
-defaults = 8, 60, 10, 3,\
-           20, 20, 20,\
-           "True"
 
 class StartWindow(Frame):                          
     def __init__(self, parent=None):           
         Frame.__init__(self, parent)
         self.pack()
-        widget = Button(self, text='START Simulation', command=self.start)
+        widget = Button(self, text='2. START Simulation', command=self.start)
         widget.pack(expand=YES, fill=BOTH, side=LEFT)
 
     def start(self):
@@ -124,11 +117,11 @@ def create(root, fields):
 
 
 root = Tk()
-root.title("CultEvo 0.6")
+root.title("CultEvo 1.0")
 root.geometry("500x300")
 
 vars = create(root, fields)
-Button(root, text='Update Values', command=(lambda v=vars: run(v))).pack(side=LEFT)
+Button(root, text='1. Accept Values', command=(lambda v=vars: run(v))).pack(side=LEFT)
 
 StartWindow(root).pack(side=RIGHT)
 root.bind('<Return>', (lambda event, v=vars: run(v)))   
@@ -143,6 +136,12 @@ if len(parameter) != 0:
     facFish         = int(parameter[5])
     facVeggi        = int(parameter[6])
     do_mutate       = bool(parameter[7])
+    
+    f = open(defaultsPath+".defaults.txt","w")
+    f.write(parameter[0])
+    for set_par in parameter[1:]:
+        f.write("\n"+set_par)
+    f.close()
 else:
     sys.exit("CultEvo is closed.")
 

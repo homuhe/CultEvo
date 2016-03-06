@@ -13,20 +13,16 @@
 
 """
 
+import os
+import time
 import random
 
-import time
-import Generation
-import Presets as P
 import Write
-import os
-import Analysis as stat
+import Generation
 import Config as cfg
+import Presets as P
 
 random.seed()
-
-
-
 
 
 class CultEvo(object):
@@ -78,11 +74,6 @@ class CultEvo(object):
         self.numOfGenerations = generationRun.countGenUp
 
 
-
-
-
-
-
 lstOfGenerationsNumbers = []
 
 # setting up an unique identifier for each simulation
@@ -95,8 +86,8 @@ for x in range(P.numberOfSimulationRuns):
 
     runX = CultEvo(ce_id);
 
-
     lstOfGenerationsNumbers.append(runX.numOfGenerations)
+
 
 # writing statistics
 Write.WriteStatistics(P, lstOfGenerationsNumbers)
