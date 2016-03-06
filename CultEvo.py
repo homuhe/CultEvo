@@ -20,7 +20,7 @@ import Generation
 import Presets as P
 import os
 import Analysis as stat
-
+import Config as cfg
 
 random.seed()
 
@@ -32,8 +32,6 @@ class CultEvo(object):
 
     numOfGenerations = 0
 
-    def writeToFileSimulation(self):
-        pass
 
     def __init__(self,ce_id):
 
@@ -45,7 +43,7 @@ class CultEvo(object):
 
         # Collection of all CultEvo runs
         # something of the form : ..cwd..\Simulations_2016-03-04_[13_23_06]\
-        self.simulationPath = self.simulationsPath + "/Sim_{}/".format(ce_id)
+        self.simulationPath = self.simulationsPath + "Sim_{}/".format(ce_id)
         if os.path.isdir(self.simulationPath):
             pass
         else:
@@ -62,8 +60,10 @@ class CultEvo(object):
             # ReviewMe: in order to work YOU MUST NOT ALTER THE CONTENT OR NAMES OF THE
             #           FOLDER STRUCTURE MANUALLY IN ANY WAY !!!!!!...!!!!!!!!!!!!
 
-            self.simRunPath = self.simulationPath + "SimRun_{:03}/".format(int(list(os.listdir(self.simulationPath).__reversed__())[0].split("_")[1])+1)
+
+            self.simRunPath = self.simulationPath + "SimRun_{:03}/".format(int(sorted(os.listdir(self.simulationPath))[-1].split("_")[1])+1)
             os.makedirs(self.simRunPath)
+
 
         # for Generation folders check in Generation.py
 
@@ -89,8 +89,9 @@ ce_id = time.strftime("%Y-%m-%d_") + time.strftime("[%H_%M_%S]")
 
 for x in range(P.numberOfSimulationRuns):
 
-    global idA
-    idA = 0
+    # reset Config values for each individual simulation run
+    cfg.Config_Reset()
+
     runX = CultEvo(ce_id);
 
 

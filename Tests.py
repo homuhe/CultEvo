@@ -14,10 +14,9 @@ __author__ = 'AD'
 
 
 
-import Agent
-import Recipe as REx
-import Generation
 
+import Recipe as REx
+import Config as cfg
 
 
 
@@ -39,7 +38,7 @@ def CntTest(agentArr):
         else:
             vCnt += 1
 
-        print str(x.retIDA())+ " " + x.getPref()
+        print str(x.getIDA())+ " " + x.getPref()
         RecTest(x)
 
     print
@@ -53,7 +52,7 @@ def RecTest(agent):
     :param agent: An Agents instance
     :return: Printed out visual representation of the ingredients in the Agents recipe
     """
-    print agent.retRec().ingredients
+    print agent.getRec().ingredients
 
 def RetAllGenAgents(agentsArray):
     """
@@ -73,7 +72,7 @@ def RetAllGenAgents(agentsArray):
         else:
             vCnt += 1
 
-        print str(x.retIDA())+ " " + x.getPref()
+        print str(x.getIDA())+ " " + x.getPref()
         RecTest(x)
 
     print
@@ -90,9 +89,9 @@ def RetAllAgents():
     mCnt = 0
     fCnt = 0
     vCnt = 0
-    print Generation.agentsOverAllDict.__len__()
-    for alst in Generation.agentsOverAllDict:
-        for x in Generation.agentsOverAllDict[alst]:
+    print cfg.agentsOverAllDict.__len__()
+    for alst in cfg.agentsOverAllDict:
+        for x in cfg.agentsOverAllDict[alst]:
             if x.getPref() == "meat":
                 mCnt += 1
             elif x.getPref() == "fish":
@@ -100,14 +99,14 @@ def RetAllAgents():
             else:
                 vCnt += 1
 
-            print str(x.retIDA())+ " " + x.getPref()
+            print str(x.getIDA())+ " " + x.getPref()
             #RecTest(x)
     print
     print "mCnt: " + str(mCnt)
     print "fCnt: " + str(fCnt)
     print "vCnt: " + str(vCnt)
 
-def RetRecipies(start,end):
+def getRecipies(start,end):
     """
     Assuming we expand the Recipes an Agent can hold and work with to more than one, this method
     would return a visual representation of the Recipes of a certain range in the list that holds them
@@ -143,10 +142,10 @@ def RetAllRec():
 def RetDciFromArray(array):
     dict = {}
     for x in array:
-        rname = x.retRec().title
+        rname = x.getRec().title
 
-        x.retRec().counter += 1
-        dict1 = {rname:x.retRec().counter}
+        x.getRec().counter += 1
+        dict1 = {rname:x.getRec().counter}
         dict.update(dict1)
 
     for x in dict:
@@ -154,17 +153,17 @@ def RetDciFromArray(array):
 
 def RetGenRecArr(index):
 
-    for rec in Generation.ArraysOverGenerations[index]:
+    for rec in cfg.ArraysOverGenerations[index]:
         print
         print (rec.title)
         print ("Score: " + str(rec.score))
 
 def RetWinGenRecArr(index):
 
-    print Generation.WinningArrsOverGenerations.__len__()
-    print Generation.WinningArrsOverGenerations[index].__len__()
+    print cfg.WinningArrsOverGenerations.__len__()
+    print cfg.WinningArrsOverGenerations[index].__len__()
 
-    for rec in Generation.WinningArrsOverGenerations[index]:
+    for rec in cfg.WinningArrsOverGenerations[index]:
         print "Score {:4}   -  Cat.: {:>5}  -   Title: {}".format(rec.score,rec.category,rec.title)
 
 def RetSGArrs(index):
@@ -173,12 +172,12 @@ def RetSGArrs(index):
     :return: All Agents in their 'social environment' for the indexed generation plus the score of their recipe
     """
     counter = 0
-    for SGarr in Generation.SocialGroups[index]:
+    for SGarr in cfg.SocialGroups[index]:
         print
         print "new Group: Size: " + str(SGarr.__len__() )
         for agnt in SGarr:
-                print " AgentSGID: {:3} | AgentID {:3}  |   RecScore: {:3}  |  RecCateg: {:6}  |  #Ingreds: {:3}".format(agnt.sgID,agnt.retIDA(),
-                                   agnt.retRec().score,agnt.retRec().category, agnt.retRec().ing_size)
+                print " AgentSGID: {:3} | AgentID {:3}  |   RecScore: {:3}  |  RecCateg: {:6}  |  #Ingreds: {:3}".format(agnt.sgID,agnt.getIDA(),
+                                   agnt.getRec().score,agnt.getRec().category, agnt.getRec().ing_size)
                 if agnt.ancestors != 0:
                     print " Parent: {:3}".format(agnt.ancestors)
                 counter += 1
@@ -196,12 +195,12 @@ def RetSGArrsRec(index):
 
     """
     counter = 0
-    for SGarr in Generation.SocialGroups[index]:
+    for SGarr in cfg.SocialGroups[index]:
         print
         print "new Group: Size: " + str(SGarr.__len__() )
         for agnt in SGarr:
-                print " AgentSGID: {:3} | AgentID {:3}  |   RecScore: {:3}  |  RecCateg: {:6}  |  #Ingreds: {:3}  |  Name: {:35}".format(agnt.sgID,agnt.retIDA(),
-                                   agnt.retRec().score,agnt.retRec().category, agnt.retRec().ing_size, agnt.retRec().title)
+                print " AgentSGID: {:3} | AgentID {:3}  |   RecScore: {:3}  |  RecCateg: {:6}  |  #Ingreds: {:3}  |  Name: {:35}".format(agnt.sgID,agnt.getIDA(),
+                                   agnt.getRec().score,agnt.getRec().category, agnt.getRec().ing_size, agnt.getRec().title)
                 if agnt.ancestors != 0:
                     print " Parent: {:3}".format(agnt.ancestors)
                 counter += 1

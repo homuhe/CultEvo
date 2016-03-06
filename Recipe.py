@@ -65,12 +65,12 @@ class recipe:
         return len(self.ingredients)
 
     def retRelTime(self):
-    		if self.prep_time <= timeDic["short"]:
-    			return "short"
-    		elif self.prep_time > timeDic["short"] and self.prep_time <= timeDic["medium"]:
-    			return "medium"
-    		else:
-    			return "long"
+        if self.prep_time <= timeDic["short"]:
+            return "short"
+        elif self.prep_time > timeDic["short"] and self.prep_time <= timeDic["medium"]:
+            return "medium"
+        else:
+            return "long"
 
 #CLEANUP OF INGREDIENTS STRINGS
 def clean_ingredients(ingr_list):
