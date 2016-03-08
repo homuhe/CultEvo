@@ -164,7 +164,7 @@ Nutr. Assoc. : 0
                      "Stedda" Tuna
 
 Recipe By     : 
-Serving Size  : 1     Preparation Time : 0:00
+Serving Size  : 1     Preparation Time : 0:40
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
@@ -172,7 +172,7 @@ Categories    :
        1         large  carrot -- peeled
        2   tablespoons  onion -- minced
        1    tablespoon  green onion -- minced
-     1/2           cup  fresh parsley -- chopped
+     1/2           cup  parsley -- chopped
      1/4           cup  fresh dill -- chopped -- or--
        2   tablespoons  dried dill
        1           cup  thick tahini
@@ -539,7 +539,7 @@ Categories    :
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
    1 1/2        pounds  fish fillets
-       6   tablespoons  fresh lemon juice
+       6   tablespoons  lemon juice
        1        medium  onion -- grated
        1           cup  flour -- all-purpose
        1      teaspoon  salt
@@ -1138,7 +1138,7 @@ Categories    :
        1            8"  flour tortilla
      1/4           cup  pizza sauce
        1           can  tuna
-     1/4           cup  sliced mushrooms
+     1/4           cup  mushrooms
      1/4           cup  tomato -- sliced
        2                green pepper
      1/4           cup  mozzarella cheese -- shredded
@@ -1489,19 +1489,17 @@ Nutr. Assoc. : 0
                      Tuna-Cashew Casserole
 
 Recipe By     : 
-Serving Size  : 4     Preparation Time : 0:00
+Serving Size  : 4     Preparation Time : 1:15
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
        1           can  chow mein noodles -- (3 oz.)
        1           can  condensed cream of mushroom soup -- (10 1/2 oz.)
-       1           can  tuna -- drained and flaked
-                        -- (6 1/2 or 7 oz.)
+       1           can  tuna
        1           cup  dry roasted cashews
        1           cup  chopped celery
      1/4           cup  minced onion
      1/4           cup  water
-                        Lemon wedges for garnish
 
  About 40 minutes before serving:  Preheat oven to 375 degrees.
 
@@ -1545,7 +1543,7 @@ Categories    :
 --------  ------------  --------------------------------
        4         large  baking potatoes
                         vegetable oil
-       5          cups  broccoli florets (1 bunch)
+       5          cups  broccoli
        1           can  tuna (7 oz drained -- chunk)
      1/4           cup  celery -- diced
      1/4           cup  green onions -- chopped
@@ -1581,14 +1579,14 @@ Serving Size  : 4     Preparation Time : 0:40
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
-       1       package  frozen chopped broccoli
+       1       package  broccoli
        1           can  tuna -- drained (9 1/2 oz.)
      1/2           cup  olives
      1/2           cup  sliced green onions -- with tops
        1           can  condensed cream of celery soup -- (10 3/4 oz.)
      1/2           cup  sour cream
        1           cup  Bisquick baking mix
-     1/4           cup  cold water
+     1/4           cup  water
 
  Heat oven to 375 degrees.
 
@@ -1646,7 +1644,7 @@ Categories    :
      1/4      teaspoon  lemon peel
      1/4      teaspoon  salt
      1/4      teaspoon  pepper
-     1/4           cup  hot pasta cooking water
+     1/4           cup  water
        1         pound  corkscrews -- cooked
 
 Combine tuna, olive oil, capers, parsley, garlic, lemon peel, salt and pepper. Let stand 30 minutes. Add pasta water. Toss with cooked pasta.
@@ -2403,14 +2401,14 @@ Nutr. Assoc. : 0
                      Tuna Burgers
 
 Recipe By     : 
-Serving Size  : 6     Preparation Time : 0:00
+Serving Size  : 6     Preparation Time : 0:30
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
        1           can  tuna
-       1           cup  chopped celery
+       1           cup  celery
      1/2           cup  american cheese -- diced
-       1    tablespoon  minced onion
+       1    tablespoon  onion
      1/4      teaspoon  salt
      1/8      teaspoon  pepper
      1/4           cup  mayonnaise
@@ -3830,13 +3828,13 @@ Nutr. Assoc. : 0
                      Herb & Garlic Fish
 
 Recipe By     : 
-Serving Size  : 4     Preparation Time : 0:00
+Serving Size  : 4     Preparation Time : 0:35
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
      1/2           cup  Miracle Whip
-     1/2      teaspoon  dried marjoram leaves
-     1/2      teaspoon  dried thyme leaves
+     1/2      teaspoon  marjoram
+     1/2      teaspoon  thyme
      1/2      teaspoon  garlic powder
      1/4      teaspoon  ground celery seed
        1         pound  fish fillets
@@ -5208,8 +5206,8 @@ Categories    :
      1/4           cup  lime juice -- (from 1 large lime)
        1        medium  onion -- sliced thin
        3        medium  tomatoes
-     1/4           cup  minced canned green chillies
-       1    tablespoon  drained capers
+     1/4           cup  green chillies
+       1    tablespoon  dcapers
        1   4 ounce jar  roasted red peppers -- sliced thin
 
 TO PREPARE: Place the snapper fillets in a large nonreactive baking dish;
@@ -5257,20 +5255,20 @@ Nutr. Assoc. : 0
                      Golden Apple Stuffed Fillets
 
 Recipe By     : 
-Serving Size  : 4     Preparation Time : 0:00
+Serving Size  : 4     Preparation Time : 0:25
 Categories    : Entrees                          
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
        1           cup  Golden Delicious apple -- grated, peeled
      1/4      teaspoon  salt
-     1/2           cup  grated carrot
-     1/4      teaspoon  ground black pepper
-     1/2           cup  minced green onion
-     1/8      teaspoon  dried thyme
-       2   tablespoons  fresh lemon juice
-       4                sole, cod or other white fish fillets -- (4 to 5 ounces each)
-     1/4      teaspoon  ground ginger
-     1/4      teaspoon  ground mustard
+     1/2           cup  carrot
+     1/4      teaspoon  black pepper
+     1/2           cup  green onion
+     1/8      teaspoon  thyme
+       2   tablespoons  lemon juice
+       4                sole
+     1/4      teaspoon  ginger
+     1/4      teaspoon  mustard
      1/2           cup  chicken broth or water
 
 Heat oven to 400; lightly oil small roasting pan. In medium-size bowl, combine apple, carrot, green onion, lemon juice, ginger, mustard, salt, pepper and thyme; mix well. Spread apple mixture evenly over length of fillets; carefully roll up.

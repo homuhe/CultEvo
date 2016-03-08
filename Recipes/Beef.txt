@@ -335,7 +335,7 @@ Serving Size  : 1     Preparation Time : 1:20
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
-       1           can  corned beef brisket, canned
+       1           can  corned beef brisket
        1                onion
        1     large can  tomatoes
        1                water -- tomato can size
@@ -673,7 +673,7 @@ Nutr. Assoc. : 0
                      French Style Veal Cutlets
 
 Recipe By     : 
-Serving Size  : 4     Preparation Time : 0:00
+Serving Size  : 4     Preparation Time : 0:30
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
@@ -817,7 +817,7 @@ Categories    :
        4        Pounds  Round Roast, Trimmed
        1         Clove  Garlic -- minced
        1        Medium  Onion -- sliced
-                        Salt And Pepper -- to taste
+                        salt and pepper -- to taste
        2   Tablespoons  Oil
 
 Sprinkle meat with salt and pepper.
@@ -888,7 +888,7 @@ Categories    :
        1         pound  ground beef
      1/2           cup  onions -- chopped
        1      envelope  taco seasoning mix
-       1           can  chopped green chilies -- drained
+       1           can  green chilies -- drained
    1 1/4          cups  milk
      3/4           cup  Bisquick baking mix
        3                eggs
@@ -996,7 +996,7 @@ Categories    :
      1/4      teaspoon  thyme
        1                egg
      1/4           cup  bread crumbs
-     1/2           cup  grated parmesan cheese
+     1/2           cup  parmesan cheese
        3   tablespoons  oil
      1/2         pound  Mozzarella cheese -- thinly sliced
 
@@ -1029,7 +1029,7 @@ Categories    :
        1         Clove  Garlic -- minced
        6   Tablespoons  Butter
        4        Slices  Veal -- pounded & cut
-                        Salt And Pepper -- to taste
+                        salt and pepper -- to taste
        1           Cup  Cream
      1/2         Pound  Mushrooms -- sliced
        2   Tablespoons  Brandy
@@ -1219,19 +1219,16 @@ Nutr. Assoc. : 0
                      Tenderloin Pita Pockets
 
 Recipe By     : 
-Serving Size  : 4     Preparation Time : 0:00
+Serving Size  : 4     Preparation Time : 0:10
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
        2     teaspoons  olive oil
-       1         small  onion -- sliced and
-                        -- separated into
-                        -- rings
+       1         small  onion
      1/2                Green pepper -- diced
        2        cloves  garlic -- minced
      1/2      teaspoon  dried oregano leaves
-       1         pound  tenderloin tips -- cut into lengthwise
-                        -- strips
+       1         pound  tenderloin tips
        4                Pita pockets -- cut in half
 
  Combine oil, onion, green pepper, garlic and oregano in a non-stick frying pan and cook for 2-3 minutes.
@@ -1264,7 +1261,7 @@ Nutr. Assoc. : 0
                      Sweet'n Sour Burgers
 
 Recipe By     : 
-Serving Size  : 4     Preparation Time : 0:00
+Serving Size  : 4     Preparation Time : 0:25
 Categories    : 
   Amount  Measure       Ingredient -- Preparation Method
 --------  ------------  --------------------------------
@@ -2785,8 +2782,8 @@ Categories    :
      1/8      teaspoon  black pepper
        2   tablespoons  low-fat baking mix
        1    tablespoon  worcestershire sauce
-       1           cup  fat-free cottage cheese
-       1           cup  fat-free cheddar cheese -- grated
+       1           cup  cottage cheese
+       1           cup  cheddar cheese -- grated
 
 Preheat oven to 375. Prepare a 8" square baking pan with cooking spray and flour; set aside.
 
