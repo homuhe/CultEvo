@@ -67,6 +67,11 @@ fields = "Number of Generations:", "Number of Agents:", "Max Size of Social Grou
          "Meat Agents %:", "Fish Agents %:", "Veggi Agents %:",\
          "Mutate:"
 
+
+# ===================================
+#           Presets - GUI
+# ===================================
+
 class StartWindow(Frame):                          
     def __init__(self, parent=None):           
         Frame.__init__(self, parent)
@@ -117,7 +122,7 @@ def create(root, fields):
 
 
 root = Tk()
-root.title("CultEvo 1.0")
+root.title("CultEvo 1.1")
 root.geometry("500x300")
 
 vars = create(root, fields)
@@ -144,5 +149,4 @@ if len(parameter) != 0:
     f.close()
 else:
     sys.exit("CultEvo is closed.")
-
 # </editor-fold>

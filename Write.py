@@ -1,10 +1,9 @@
 import time
 import os
 import Analysis as stat
-
+from Presets import facMeat, facFish, facVeggi
 
 # write general data about this generation to a file
-
 class WriteGen(object):
     """
     Writing a textual class representation of this Generation to a file
@@ -27,9 +26,9 @@ class WriteGen(object):
         f.write("\n")
         f.write("Number of Agents       : {:03}\n".format(agentArr.__len__()))
         f.write("Number of Social Groups: {:03}\n".format(SGArrs.__len__()))
-        f.write("Number of Meat eaters  : {:03}\n".format(1))
-        f.write("Number of Fish eaters  : {:03}\n".format(1))
-        f.write("Number of Vegetarians  : {:03}\n".format(1))
+        f.write("Number of Meat eaters  : {:03}\n".format(facMeat))
+        f.write("Number of Fish eaters  : {:03}\n".format(facFish))
+        f.write("Number of Vegetarians  : {:03}\n".format(facVeggi))
         f.write("\n")
         f.write("\n")
         f.write("Social Groups:\n")
@@ -46,7 +45,7 @@ class WriteGen(object):
         f.write("and in the current generation:\n")
         for agnt in agentsOverAllDict[countGenUp]:
             f.write("   Agent {}\n".format(agnt.getIDA()))
-        f.write("size of WinningArrsOverGenerations  : {}\n\n\n".format(WinningArrsOverGenerations.__len__()))
+        f.write("\nsize of WinningArrsOverGenerations  : {}\n\n\n".format(WinningArrsOverGenerations.__len__()))
 
         f.write("\nOverview over all Generations:\n")
         f.write("==============================\n\n")
@@ -60,7 +59,6 @@ class WriteGen(object):
                 f.write("   RecName: {:>40}, {:>3} likes\n".format(rec.title, rec.score))
             n += 1
         f.close()
-
 
 
 class WriteAgent(object):
@@ -86,7 +84,6 @@ class WriteAgent(object):
         f.write("\n")
         f.write("Recipe    : {}\n".format(agnt.getRec().title))
         f.close()
-
 
 
 class WriteStatistics(object):

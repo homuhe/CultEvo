@@ -1,4 +1,3 @@
-__author__ = 'AD'
 '''
     Cultural Evolution Simulation
 
@@ -11,11 +10,8 @@ __author__ = 'AD'
 
     Module Descr.:  Collection of methods for quick testing purposes
 '''
-
-
 import Recipe as REx
 import Config as cfg
-
 
 
 def CntTest(agentArr):
@@ -98,7 +94,7 @@ def RetAllAgents():
                 vCnt += 1
 
             print str(x.getIDA())+ " " + x.getPref()
-            #RecTest(x)
+
     print
     print "mCnt: " + str(mCnt)
     print "fCnt: " + str(fCnt)
@@ -121,9 +117,6 @@ def getRecipies(start,end):
         print(recipe.ingredients)
         print("Ing Size: " + str(recipe.ing_size))
         print("Score: " + str(recipe.score))
-
-   # print("All ingreds: ")
-   # print(REx.retAllIngreds())
 
 def RetAllRec():
 
@@ -203,7 +196,6 @@ def RetSGArrsRec(index):
                     print " Parent: {:3}".format(agnt.ancestors)
                 counter += 1
         print
-
 
     print ("----------")
     print ("Sum of Agents: " + str(counter))

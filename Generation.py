@@ -1,7 +1,5 @@
-__author__ = 'AD'
-
 import random
-import sys,os,time
+import sys,os
 import Write
 import Agent
 import Recipe as REx
@@ -57,24 +55,17 @@ class Generation(object):
     # the Array holding the recipies for an individual Generation
     genRecArr = []
 
+
     # List holding the Recipies that got the highest score in each social
     # group and were passed on
-
     winGenRecArr = []
 
 
     # List holding the Social Groups of this Generation
     SGArrs = []
 
-    # ReviewMe: Number of modifications per Agents and recipe
-    # cntMod = 1
-
-
 
     def __init__(self, numberAgents, counterGen, simRunPath):
-
-
-
         """
         global agentsOverGenerations
         agentsOverGenerations = []
@@ -107,9 +98,6 @@ class Generation(object):
         SocialGroups = {}
         SGArrs = []
         """
-
-
-
 
         #   ===================================
         #    Initialisation of the GENERATIONS
@@ -181,12 +169,8 @@ class Generation(object):
                         "Generations.__init__(): Preference percentages don't add up too 100%, please check! \nProgram ends!")
 
                 # populating the array with Agent instances
-                #print()
-                #print "  --- --- --- "
-                #print "Agents in Generation: {:3}".format(self.countGenUp)
                 for pref in weightedPreferences:
                     self.agnt = Agent.Agent(pref, None, self.GenPath)
-                #    print "self.agnt idA = {:3} ||  Ancestors = {:3}".format(self.agnt.idA,self.agnt.ancestors)
                     self.agnt.judgeMyRec(self.agnt)
                     # after creating an agent we store his/her Recipe in genRecArr
                     self.genRecArr.append(self.agnt.getRec())
@@ -235,8 +219,6 @@ class Generation(object):
                                     for friend in self.tmpArr:
                                         me.judgeMyRec(friend)
 
-                            #else:
-                            #    pass
                         except ValueError:
                             print ("Could not create social environment of large size!")
 
@@ -282,12 +264,10 @@ class Generation(object):
 
 
                 # </editor-fold>
-                ###
-                # print self.winGenRecArr.__len__()
+
                 self.winGenRecArr = DetSGArrayWinners(self.countGenUp)
 
                 cfg.WinningArrsOverGenerations[self.countGenUp] = self.winGenRecArr
-                # print self.winGenRecArr.__len__()
 
                 for agnt in self.agentArr:
                     Write.WriteAgent(self.GenPath,agnt)
@@ -330,16 +310,9 @@ class Generation(object):
 
                 # populating the array with Agent instances as offsprings of our
                 # predecessor generation
-                #print()
-                #print "  --- --- --- "
-                #print "Agents in Generation: {:3}".format(self.countGenUp)
                 for x in cfg.agentsOverAllDict[self.countGenUp-1]:
                     self.agnt = Agent.Agent(x.preference, x, self.GenPath)
-                    #print
-                    #print "self.agnt idA = {:3} ||  x.idA = {:3}".format(self.agnt.idA,x.idA)
-                    #print "Py ID self.agnt.ancestors: {:10}  || Py ID x.ancestors: {:10}".format(id(self.agnt.ancestors),id(x.ancestors))
-                    #print "own ancestors: {:25}".format(self.agnt.ancestors)
-                    #print "x's ancestors: {:25}".format(x.ancestors)
+
                     # You get to judge your own culinary oeuvre
                     self.agnt.judgeMyRec(self.agnt)
                     # after creating an agent we store his/her Recipe in genRecArr
@@ -388,8 +361,6 @@ class Generation(object):
                                     for friend in self.tmpArr:
                                         me.judgeMyRec(friend)
 
-                            #else:
-                            #    pass
                         except ValueError:
                             print ("Could not create social environment of large size!")
 
@@ -428,11 +399,9 @@ class Generation(object):
 
                 # </editor-fold>
 
-                # print self.winGenRecArr.__len__()
                 self.winGenRecArr = DetSGArrayWinners(self.countGenUp)
 
                 cfg.WinningArrsOverGenerations[self.countGenUp] = self.winGenRecArr
-                # print self.winGenRecArr.__len__()
                 # </editor-fold>
 
                 for agnt in self.agentArr:
@@ -456,9 +425,6 @@ class Generation(object):
         # </editor-fold>
 
 
-
-
-
     def getAgentArr(self):
         '''
         The Array containing the Agent instances that
@@ -475,5 +441,3 @@ class Generation(object):
         :return: Array with ALL Agents over all Generations
         '''
         return cfg.agentsOverGenerations
-
-
