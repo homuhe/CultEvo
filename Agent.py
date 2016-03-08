@@ -1,4 +1,3 @@
-__author__ = 'AD'
 '''
     Cultural Evolution Simulation
 
@@ -66,12 +65,6 @@ class Agent(object):
             recipe = self.recipies[0]
             actions = ["none", "add", "delete", "substitute"]
             random_number = random.randrange(len(actions))
-
-            #TODO: delete
-            #print
-            #print
-            #print(recipe.title)
-            #print(recipe.ingredients)
         
             action = actions[random_number]
 
@@ -99,14 +92,6 @@ class Agent(object):
             else:
 
                 recipe.mutate_history.append([self.idA,"none"])
-
-            #TODO: delete
-            #print
-            #print("Agent " + str(self.idA) + " is cooking!")
-            #print("..." + recipe.mutate_history[-1][-1])
-            #print
-            #print(recipe.ingredients)
-    
 
 
     def __init__(self, pref,parent,GenPath):
@@ -221,37 +206,7 @@ class Agent(object):
                     self.getRec().score += 1
                     self.judgeSc += 1
 
-        #print "Judge{:3} gave {:4} points for {}".format(agentOb.getIDA(),self.judgeSc,self.getRec().title)
-        # FixMe: Range for number of ingreds
-
     # <editor-fold desc=" judgeMyRec(self.agentOb) tmps to compare different rule sets
-    def judgeMyRec_TMP_01(self,agentOb):
-
-        # ReviewMe: Balancing of the points assigned to the individual Recipe score
-        # if each ingred gets one point we have a bias for recipies with many
-        # ingreds (not necessarily a bad thing), but we have to adjust the time too
-        # by using margins as discussed, e.g., fast - medium - long and respective points
-
-        self.judgeSc = 0
-
-        if not type(agentOb) is Agent:
-            sys.exit("Agent.judgeMyRec() - object not of type Agent")
-        else:
-            #print()
-            #print("Agent: " + str(agentOb.getIDA()))
-            if self.getPref() == agentOb.getPref():
-                self.getRec().score += 1
-                self.judgeSc += 1
-            if self.timePref == agentOb.getRec().rel_prep_time:
-                self.getRec().score += 1
-                self.judgeSc += 1
-            for i in agentOb.getRec().ingredients:
-                if i in  self.getRec().ingredients:
-                    self.getRec().score += 1
-                    self.judgeSc += 1
-
-        #print "Judge{:3} gave {:4} points for {}".format(agentOb.getIDA(),self.judgeSc,self.getRec().title)
-        # FixMe: Range for number of ingreds
 
     def setSocGrp(self,genCounter,sgID):
         """

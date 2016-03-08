@@ -13,8 +13,7 @@
     Module Descr.:  Extracts & processes recipes from raw text resource from source:
                     http://mc6help.tripod.com/RecipeLibrary/RecipeLibrary.htm (access 26/02/16)
 '''
-
-import glob, re, os, pprint, sys
+import glob, re, os, sys
 from Presets import *
 
 recipes_dir = os.path.dirname(os.path.realpath(__file__)) + "/Recipes/"
@@ -24,10 +23,9 @@ recipes = []            #list of all recipe objects
 recipesMeat = []        
 recipesFish = []
 recipesVeggi = []
-
 all_ingredients = []    #list of all ingredients of all recipes
 
-class recipe:
+class recipe(object):
     def __init__(self, category, title, prep_time, ingredients):
 
 
@@ -92,12 +90,6 @@ def recipeDiff(r):
         recipesVeggi.append(r)
     else:
         sys.exit("Error in recipe_extractor.py, lines 35, wrong recipe type handed over from source txt file.")
-
-#TODO: needed?
-def retAllIngreds():
-    index = 0
-    i = 0
-    pprint.pprint(all_ingredients)
 
 
 #GATERING ALL TEXT FILES:
@@ -202,7 +194,6 @@ else:
                 for ingredient in ingredients_list:
                     if ingredient not in all_ingredients:
                         all_ingredients.append(ingredient)
-
 
 
 if __name__ == "__main__":

@@ -1,4 +1,3 @@
-
 """
     Cultural Evolution Simulation
 
@@ -54,9 +53,6 @@ class CultEvo(object):
 
         else:
             # get the highest index of the already existing folders.
-            # ReviewMe: in order to work YOU MUST NOT ALTER THE CONTENT OR NAMES OF THE
-            #           FOLDER STRUCTURE MANUALLY IN ANY WAY !!!!!!...!!!!!!!!!!!!
-
 
             self.simRunPath = self.simulationPath + "SimRun_{:03}/".format(int(sorted(os.listdir(self.simulationPath))[-1].split("_")[1])+1)
             os.makedirs(self.simRunPath)

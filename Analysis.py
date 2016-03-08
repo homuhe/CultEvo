@@ -1,3 +1,5 @@
+##  - MODULE PORT FROM PYTHON3 -
+##  
 ##  Module statistics.py
 ##
 ##  Copyright (c) 2013 Steven D'Aprano <steve+python@pearwood.info>.
@@ -447,7 +449,6 @@ def median_grouped(data, interval=1):
     f = data.count(x)  # Number of data points in the median interval.
     return L + interval*(n/2 - cf)/f
 
-
 def mode(data):
     """Return the most common data point from discrete or nominal data.
 
@@ -475,7 +476,6 @@ def mode(data):
                 )
     else:
         raise StatisticsError('no mode for empty data')
-
 
 # === Measures of spread ===
 
@@ -546,7 +546,6 @@ def variance(data, xbar=None):
     >>> from fractions import Fraction as F
     >>> variance([F(1, 6), F(1, 2), F(5, 3)])
     Fraction(67, 108)
-
     """
     if iter(data) is data:
         data = list(data)
@@ -555,7 +554,6 @@ def variance(data, xbar=None):
         raise StatisticsError('variance requires at least two data points')
     T, ss = _ss(data, xbar)
     return _convert(ss/(n-1), T)
-
 
 def pvariance(data, mu=None):
     """Return the population variance of ``data``.
@@ -594,7 +592,6 @@ def pvariance(data, mu=None):
     >>> from fractions import Fraction as F
     >>> pvariance([F(1, 4), F(5, 4), F(1, 2)])
     Fraction(13, 72)
-
     """
     if iter(data) is data:
         data = list(data)
@@ -604,7 +601,6 @@ def pvariance(data, mu=None):
     ss = _ss(data, mu)
     T, ss = _ss(data, mu)
     return _convert(ss/n, T)
-
 
 def stdev(data, xbar=None):
     """Return the square root of the sample variance.
@@ -621,7 +617,6 @@ def stdev(data, xbar=None):
     except AttributeError:
         return math.sqrt(var)
 
-
 def pstdev(data, mu=None):
     """Return the square root of the population variance.
 
@@ -629,7 +624,6 @@ def pstdev(data, mu=None):
 
     >>> pstdev([1.5, 2.5, 2.5, 2.75, 3.25, 4.75])
     0.986893273527251
-
     """
     var = pvariance(data, mu)
     try:
